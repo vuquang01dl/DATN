@@ -1,0 +1,198 @@
+﻿@using Newtonsoft.Json
+@using X.PagedList;
+@using X.PagedList.Mvc.Core
+@model IPagedList<Application.DTOs.TourDTOs.TourViewModel>
+
+@{
+    ViewData["Title"] = "List Tour";
+    Layout = "_ecomLayout";
+}
+@section css{
+    <style>
+        .card-size {
+            height: 100%; /* Chiều cao cố định */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Nội dung cách đều nhau */
+        }
+
+        .card-img-top {
+            height: 180px; /* Đặt chiều cao cố định cho ảnh */
+            object-fit: cover; /* Giữ tỷ lệ ảnh mà không bị méo */
+        }
+
+        .btn-primary {
+            float: right; /* Đặt nút sang bên phải */
+        }
+
+        .card-footer {
+            background-color: #f8f9fa; /* Màu nền nhạt hơn cho phần footer */
+        }
+
+        .pagination li{
+            margin: 0 2px;
+        }
+
+            .pagination li a, .pagination li span {
+                display: block;
+                padding: 10px 15px;
+                text-decoration: none;
+                color: #007bff;
+                border: 1px solid #dee2e6;
+                border-radius: 3px;
+                transition: background-color 0.3s, color 0.3s;
+        }
+
+            .pagination li a:hover{
+                    background-color: #007bff;
+                    color: white;
+            }
+
+                .pagination li.active span{
+                background-color: #007bff;
+                color: white;
+                border-color: #007bff;
+                }
+    </style>
+}
+
+<!-- client section start -->
+<div class="client_section layout_padding">
+    <div class="container-fluid">
+        <div class="row">
+                <div class="col-12 col-md-4 col-lg-2 p-3">
+    <!-- Sidebar -->
+    <div class="sidebar bg-light p-3" >
+
+        <!-- Phần Tour Number ở trên cùng -->
+        <div class="d-flex align-items-center mb-4">
+            <h2 id="TourNumber" class="mb-0">Tours available: </h2>
+        </div>
+
+        <!-- Form tìm kiếm -->
+        <form class="form d-flex flex-column" asp-action="Index" method="get">
+
+            <!-- Dropdown cho Categories -->
+            <div class="dropdown mb-3">
+                <input type="hidden" id="selectedCategory" name="Category" />
+                <button class="form-control dropdown-toggle" type="button" id="CategorySelect" data-toggle="dropdown" aria-expanded="false">
+                    -- Chọn loại địa điểm --
+                </button>
+                <ul class="dropdown-menu bg-white" aria-labelledby="CategorySelect" id="CategoryDropdown">
+                    <li><a class="dropdown-item" href="#" data-value="">Tất cả</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="Mountain">Núi</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="Beach">Biển</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="Cultural">Văn hóa</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="Historical">Lịch sử</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="EcoTourism">Sinh thái</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="Adventure">Mạo hiểm</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="Relaxation">Nghỉ dưỡng</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="CityTour">Thành phố</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="Festival">Lễ hội</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="Cruise">Du thuyền</a></li>
+                </ul>
+            </div>
+
+            <!-- Dropdown cho SortBy -->
+            <div class="dropdown mb-3">
+                <input type="hidden" id="selectedSortBy" name="sortBy" />
+                <button class="form-control dropdown-toggle" type="button" id="SortBySelect" data-toggle="dropdown" aria-expanded="false">
+                    -- Chọn cách sắp xếp --
+                </button>
+                <ul class="dropdown-menu bg-white" aria-labelledby="SortBySelect" id="SortByDropdown">
+                    <li><a class="dropdown-item" href="#" data-value="title_desc">Tên Tour</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="price_asc">Tiền tăng dần</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="price_dsc">Tiền giảm dần</a></li>
+                </ul>
+            </div>
+
+            <!-- Các input field khác -->
+            <input type="text" class="form-control search-bar from-to-input mb-3" name="from" maxlength="8" placeholder="Price from" value="@ViewBag.FromPrice">
+            <input type="text" class="form-control search-bar from-to-input mb-3" name="to" maxlength="8" placeholder="To Price" value="@ViewBag.ToPrice">
+            <input type="text" class="form-control search-bar mb-3" id="search-input" name="searchTerm" placeholder="Search for tours" value="@ViewBag.searchTerm">
+
+            <!-- Nút Search -->
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+
+                </div>
+            <!-- Main Content -->
+            <div class="col-12 col-md-8 col-lg-10 p-3">
+                <div id="tour-grid" class="row list-data">
+                    <!-- Các thẻ tour sẽ được thêm vào đây -->
+                    @if(Model != null && Model.Any())
+                    {
+                        @foreach (var tour in ViewBag.OnePageOfProducts)
+                        {
+                            <div class="col-12 col-lg-4  mb-4">
+                                <a asp-action="Details" asp-controller="Tour" asp-route-TourID="@tour.TourID"
+                                   class="text-decoration-none">
+                                    <div class="card card-size">
+                                        <img src="~/assetPrivate/img/tour/@tour.Image" class="card-img-top" alt="Tour image" style="height: 300px; object-fit:cover">
+                                        <div class="card-body">
+                                            <h3 class="card-title" style="height:50px; overflow:hidden">@tour.Title</h3>
+                                            <h2 class="text-success text-center" style="height:50px">Giá: <strong>@string.Format("{0:N0}₫", tour.Price)</strong></h2>
+                                            <p class="card-text">@tour.Description</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="text-muted"><strong>Category: </strong>@tour.Category</p>
+                                                <p class="text-muted"><strong>City: </strong>@tour.City</p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    }
+                    
+                </div>
+                <div class=" mt-4 d-flex justify-content-center">
+                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = ViewBag.PageSiz, from = ViewBag.FromPrice,  to = ViewBag.ToPrice,  sortBy = ViewBag.SortBy,Category = ViewBag.Category,searchTerm = ViewBag.searchTerm}))
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section script{
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Cập nhật giá trị cho input ẩn khi chọn mục trong dropdown Category
+    document.querySelectorAll('#CategoryDropdown .dropdown-item').forEach(item => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        console.log('Item clicked:', this.innerText);  
+        // Cập nhật giá trị cho dropdown Category
+        let dropdownButtonCategory = document.getElementById('CategorySelect');
+        dropdownButtonCategory.innerText = this.innerText; // Đổi tên dropdown thành tên mục đã chọn
+        dropdownButtonCategory.setAttribute('data-value', this.getAttribute('data-value')); // Lưu giá trị vào button
+
+        // Lưu giá trị vào input ẩn
+        document.getElementById('selectedCategory').value = this.getAttribute('data-value');
+      });
+    });
+
+    // Cập nhật giá trị cho input ẩn khi chọn mục trong dropdown SortBy
+    document.querySelectorAll('#SortByDropdown .dropdown-item').forEach(item => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        console.log('Item clicked:', this.innerText);  
+        // Cập nhật giá trị cho dropdown SortBy
+        let dropdownButtonSortBy = document.getElementById('SortBySelect');
+        dropdownButtonSortBy.innerText = this.innerText; // Đổi tên dropdown thành tên mục đã chọn
+        dropdownButtonSortBy.setAttribute('data-value', this.getAttribute('data-value')); // Lưu giá trị vào button
+
+        // Lưu giá trị vào input ẩn
+        document.getElementById('selectedSortBy').value = this.getAttribute('data-value');
+      });
+    });
+  });
+</script>
+
+}

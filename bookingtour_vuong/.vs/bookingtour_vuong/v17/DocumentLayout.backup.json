@@ -1,0 +1,196 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B33EA492-4A9B-4043-B22F-76BCBE5A8EE4}|Domain\\Domain.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\domain\\entities\\tour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B33EA492-4A9B-4043-B22F-76BCBE5A8EE4}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\tour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B33EA492-4A9B-4043-B22F-76BCBE5A8EE4}|Domain\\Domain.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\domain\\repositories\\itourrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B33EA492-4A9B-4043-B22F-76BCBE5A8EE4}|Domain\\Domain.csproj|solutionrelative:domain\\repositories\\itourrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB0805F9-01DC-4AFB-9084-CC666C33876A}|Application\\Application.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\application\\dtos\\tourdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB0805F9-01DC-4AFB-9084-CC666C33876A}|Application\\Application.csproj|solutionrelative:application\\dtos\\tourdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB0805F9-01DC-4AFB-9084-CC666C33876A}|Application\\Application.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\application\\services_interface\\itourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB0805F9-01DC-4AFB-9084-CC666C33876A}|Application\\Application.csproj|solutionrelative:application\\services_interface\\itourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB0805F9-01DC-4AFB-9084-CC666C33876A}|Application\\Application.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\application\\services\\tourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB0805F9-01DC-4AFB-9084-CC666C33876A}|Application\\Application.csproj|solutionrelative:application\\services\\tourservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C0A6FAF-3C23-4B8E-BD9E-98EC4353D3F6}|Infrastructure\\Infrastructure.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C0A6FAF-3C23-4B8E-BD9E-98EC4353D3F6}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BookingTour.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BookingTour.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-19T12:02:08.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\appsettings.json",
+              "RelativeDocumentMoniker": "BookingTour.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\appsettings.json",
+              "RelativeToolTip": "BookingTour.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAB3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-19T11:55:29.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TourController.cs",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Controllers\\TourController.cs",
+              "RelativeDocumentMoniker": "BookingTour.API\\Controllers\\TourController.cs",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Controllers\\TourController.cs",
+              "RelativeToolTip": "BookingTour.API\\Controllers\\TourController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:54:57.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Program.cs",
+              "RelativeDocumentMoniker": "BookingTour.API\\Program.cs",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Program.cs",
+              "RelativeToolTip": "BookingTour.API\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAcwBIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:44:48.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Infrastructure\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T09:54:02.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TourService.cs",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\Services\\TourService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\TourService.cs",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\Services\\TourService.cs",
+              "RelativeToolTip": "Application\\Services\\TourService.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T09:47:46.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITourService.cs",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\Services_Interface\\ITourService.cs",
+              "RelativeDocumentMoniker": "Application\\Services_Interface\\ITourService.cs",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\Services_Interface\\ITourService.cs",
+              "RelativeToolTip": "Application\\Services_Interface\\ITourService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T09:46:50.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TourDTO.cs",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\DTOs\\TourDTO.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\TourDTO.cs",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\DTOs\\TourDTO.cs",
+              "RelativeToolTip": "Application\\DTOs\\TourDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T09:46:01.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ITourRepository.cs",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Domain\\Repositories\\ITourRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Repositories\\ITourRepository.cs",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Domain\\Repositories\\ITourRepository.cs",
+              "RelativeToolTip": "Domain\\Repositories\\ITourRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T09:44:53.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Tour.cs",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Domain\\Entities\\Tour.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Tour.cs",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Domain\\Entities\\Tour.cs",
+              "RelativeToolTip": "Domain\\Entities\\Tour.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T09:44:07.211Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

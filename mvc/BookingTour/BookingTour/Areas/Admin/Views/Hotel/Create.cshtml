@@ -1,0 +1,248 @@
+﻿@model Application.DTOs.HotelDto.HotelModel;
+@{
+    ViewData["Title"] = "Thêm khách sạn mới";
+}
+@section css{
+    <style>
+                .rating i {
+            font-size: 2rem;
+            color: #ccc; /* Màu mặc định */
+            cursor: pointer;
+            margin: 0 5px;
+            transition: color 0.3s;
+        }
+
+        .rating i.hover,
+        .rating i.selected {
+            color: gold; /* Màu vàng cho sao đã chọn hoặc hover */
+        }
+
+    </style>
+}
+<div class="page-header">
+    <h3 class="fw-bold mb-3">Thêm Khách Sạn Mới</h3>
+    <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+            <a asp-area="Admin"
+               asp-controller="Home"
+               asp-action="Index">
+                <i class="icon-home"></i>
+            </a>
+        </li>
+        <li class="separator">
+            <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+            <a asp-area="Admin"
+               asp-controller="Hotel"
+               asp-action="Index">
+                Hotels
+            </a>
+        </li>
+        <li class="separator">
+            <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item active">
+            Create
+        </li>
+
+    </ul>
+</div>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" class="form-control" Required>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mt-3">
+        <img id="imagePreview" src="#" alt="Image Preview" style="max-width: 300px; display: none; object-fit:cover">
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Image" class="form-label"></label>
+        <input asp-for="Image" type="file" class="form-control" onchange="previewImage(event)">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" type="text" class="form-control" Required>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StarRating"></label>
+        <div class="rating gap-2">
+            <i class="far fa-star" data-value="1"></i>
+            <i class="far fa-star" data-value="2"></i>
+            <i class="far fa-star" data-value="3"></i>
+            <i class="far fa-star" data-value="4"></i>
+            <i class="far fa-star" data-value="5"></i>
+        </div>
+        <input asp-for="StarRating" type="hidden" id="StarRating" Required />
+
+        <span asp-validation-for="StarRating" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SelectedCity" class="form-label">City</label>
+        <select asp-for="SelectedCity" class="form-select" id="citySelect" required>
+            <option value="" selected disabled>Select a city</option>
+            @foreach (var city in Model.Cities)
+            {
+                <option value="@city.Text">@city.Text</option>
+            }
+        </select>
+        <span asp-validation-for="SelectedCity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SelectedDistrict" class="form-label">District</label>
+        <select asp-for="SelectedDistrict" class="form-select" id="districtSelect" disabled>
+            <option value="" selected disabled>Select a district</option>
+        </select>
+        <span asp-validation-for="SelectedDistrict" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SelectedWard" class="form-label">Ward</label>
+        <select asp-for="SelectedWard" class="form-select" id="wardSelect" disabled>
+            <option value="" selected disabled>Select a ward</option>
+        </select>
+        <span asp-validation-for="SelectedWard" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address" class="form-label">Ward</label>
+        <input asp-for="Address" type="text" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-area="Admin" asp-controller="Hotel" asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
+
+@section script{
+    <script>
+        $(document).ready(function () {
+            $('#citySelect').change(function () {
+                const cityCode = $(this).val();
+                $('#districtSelect').html('<option value="" selected disabled>Loading...</option>');
+                $('#districtSelect').prop('disabled', true);
+                $('#wardSelect').html('<option value="" selected disabled>Select a ward</option>');
+                $('#wardSelect').prop('disabled', true);
+
+                if (cityCode) {
+                    $.ajax({
+                        url: `/Admin/Hotel/GetDistricts?cityCode=${cityCode}`,
+                        method: 'GET',
+                        success: function (districts) {
+                            $('#districtSelect').html('<option value="" selected disabled>Select a district</option>');
+                            districts.forEach(d => {
+                                $('#districtSelect').append(`<option value="${d.value}">${d.text}</option>`);
+                            });
+                            $('#districtSelect').prop('disabled', false);
+                        },
+                        error: function () {
+                            alert('Failed to load districts.');
+                        }
+                    });
+                }
+            });
+
+            $('#districtSelect').change(function () {
+                const districtName = $(this).val();
+                const cityCode = $('#citySelect').val();
+                $('#wardSelect').html('<option value="" selected disabled>Loading...</option>');
+                $('#wardSelect').prop('disabled', true);
+
+                if (districtName && cityCode) {
+                    $.ajax({
+                        url: `/Admin/Hotel/GetWards?cityCode=${cityCode}&districtName=${districtName}`,
+                        method: 'GET',
+                        success: function (wards) {
+                            $('#wardSelect').html('<option value="" selected disabled>Select a ward</option>');
+                            wards.forEach(w => {
+                                $('#wardSelect').append(`<option value="${w.value}">${w.text}</option>`);
+                            });
+                            $('#wardSelect').prop('disabled', false);
+                        },
+                        error: function () {
+                            alert('Failed to load wards.');
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+
+    <script>
+        const stars = document.querySelectorAll('.rating i');
+        const ratingInput = document.getElementById('StarRating');
+
+        stars.forEach((star) => {
+            // Hiệu ứng khi hover
+            star.addEventListener('mouseover', function () {
+                resetStars(); // Reset tất cả sao
+                highlightStars(this.dataset.value); // Highlight các sao trước sao hiện tại
+            });
+
+            // Reset sao khi rời chuột
+            star.addEventListener('mouseout', function () {
+                resetStars();
+                highlightStars(ratingInput.value); // Giữ nguyên sao đã chọn
+            });
+
+            // Xử lý khi click để chọn rating
+            star.addEventListener('click', function () {
+                ratingInput.value = this.dataset.value; // Gán giá trị vào input ẩn
+                highlightStars(this.dataset.value); // Giữ trạng thái sao đã chọn
+            });
+        });
+
+        // Highlight các sao dựa trên giá trị
+        function highlightStars(value) {
+            stars.forEach((star) => {
+                if (star.dataset.value <= value) {
+                    star.classList.add('fas', 'selected'); // Sao đã chọn
+                    star.classList.remove('far');
+                } else {
+                    star.classList.add('far'); // Sao chưa chọn
+                    star.classList.remove('fas', 'selected');
+                }
+            });
+        }
+
+        // Reset tất cả sao
+        function resetStars() {
+            stars.forEach((star) => {
+                star.classList.add('far');
+                star.classList.remove('fas', 'selected', 'hover');
+            });
+        }
+
+    </script>
+
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('imagePreview');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = '#';
+                preview.style.display = 'none';
+            }
+        }
+    </script>
+}

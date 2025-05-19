@@ -1,0 +1,156 @@
+﻿@model Presentation.Areas.Admin.Models.TourDestinationViewModel
+@{
+    ViewData["Title"] = "Danh sách địa điểm trong Tour";
+}
+
+<div class="page-header">
+    <h3 class="fw-bold mb-3">Danh sách Địa Điểm Chuyến Đi</h3>
+    <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+            <a asp-area="Admin"
+               asp-controller="Home"
+               asp-action="Index">
+                <i class="icon-home"></i>
+            </a>
+        </li>
+        <li class="separator">
+            <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-home">
+            <a asp-area="Admin"
+               asp-controller="Tour"
+               asp-action="Index">
+                Tours
+            </a>
+        </li>
+        <li class="separator">
+            <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-home active">
+                @Model.Tour.Title
+        </li>
+    </ul>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Danh sách Filters</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="multi-filter-select"
+                           class="display table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Image</th>
+                                <th>Destination Name</th>
+                                <th>Visit Date</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>STT</th>
+                                <th>Image</th>
+                                <th>Destination Name</th>
+                                <th>Visit Date</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @for(int i = 0; i < Model.Destinations.Count; i++)
+                            {
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td><img src="~/assetPrivate/img/destination/@Model.Destinations[i].Image" alt="@Model.Destinations[i].Image" style="width:150px;height:100px; object-fit:cover" /></td>
+                                    <td>@Model.Destinations[i].Name</td>
+                                    <td>@Model.Destinations[i].visitDate.ToString("dd/MM/yyyy HH:mm tt")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Thông tin địa điểm tour: @Model.Tour.Title</h4>
+                    <a class="btn btn-primary btn-round ms-auto"
+                       asp-area="Admin"
+                       asp-action="Create"
+                       asp-route-TourID="@Model.TourID"
+                       asp-controller="TourDestination">
+                        <i class="fa fa-plus"></i>
+                        Thêm địa điểm
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="add-row"
+                           class="display table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Image</th>
+                                <th>Destination Name</th>
+                                <th>Visit Date</th>
+                                <th style="width: 10%">Action</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>STT</th>
+                                <th>Image</th>
+                                <th>Destination Name</th>
+                                <th>Visit Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @for (int i = 0; i < Model.Destinations.Count; i++)
+                            {
+                                <tr>
+                                    <td>@(i + 1)</td>
+                                    <td><img src="~/assetPrivate/img/destination/@Model.Destinations[i].Image" alt="@Model.Destinations[i].Image" style="width:150px;height:100px; object-fit:cover" /></td>
+                                    <td>@Model.Destinations[i].Name</td>
+                                    <td>@Model.Destinations[i].visitDate.ToString("dd/MM/yyyy HH:mm tt")</td>
+                                    <td>
+                                        <div class="form-button-action">
+
+                                            <a class="btn btn-link btn-primary" type="button"
+                                               asp-area="Admin"
+                                               asp-route-TourID="@Model.TourID"
+                                               asp-route-DestinationID="@Model.Destinations[i].DestinationID"
+                                               asp-controller="TourDestination"
+                                               asp-action="Update">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <a class="btn btn-link btn-danger " type="button"
+                                               asp-area="Admin"
+                                               asp-route-TourID="@Model.TourID"
+                                               asp-route-DestinationID="@Model.Destinations[i].DestinationID"
+                                               asp-controller="TourDestination"
+                                               asp-action="Delete">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+
+                                        </div>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

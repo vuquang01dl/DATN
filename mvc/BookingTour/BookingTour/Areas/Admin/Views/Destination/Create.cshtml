@@ -1,0 +1,198 @@
+﻿@model Application.DTOs.DestinationDTOs.DestinationCreationDto
+@{
+    ViewData["Title"] = "Thêm địa điểm mới";
+}
+
+<div class="page-header">
+    <h3 class="fw-bold mb-3">Thêm Địa Điểm Mới</h3>
+    <ul class="breadcrumbs mb-3">
+        <li class="nav-home">
+            <a asp-area="Admin"
+            asp-controller="Home"
+               asp-action="Index">
+                <i class="icon-home"></i>
+            </a>
+        </li>
+        <li class="separator">
+            <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item">
+            <a asp-area="Admin"
+            asp-controller="Destination"
+               asp-action="Index">
+                Destinations
+            </a>
+        </li>
+        <li class="separator">
+            <i class="icon-arrow-right"></i>
+        </li>
+        <li class="nav-item active">
+            Create
+        </li>
+
+    </ul>
+</div>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" type="text" class="form-control" id="Name" name="Name" required>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mt-3">
+        <img id="imagePreview" src="#" alt="Image Preview" style="max-width: 300px; display: none; object-fit:cover">
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Image" class="form-label"></label>
+        <input asp-for="Image" type="file" class="form-control" onchange="previewImage(event)">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="form-label"></label>
+        <input asp-for="Description" type="text" class="form-control" id="Description" name="Description" required>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Category" class="form-label"></label>
+        <select asp-for="Category" class="form-select" id="Category" name="Category">
+            <option value="" disabled selected>-- Chọn loại địa điểm --</option>
+            <option value="Mountain">Núi</option>
+            <option value="Beach">Biển</option>
+            <option value="Cultural">Văn hóa</option>
+            <option value="Historical">Lịch sử</option>
+            <option value="EcoTourism">Sinh thái</option>
+            <option value="Adventure">Mạo hiểm</option>
+            <option value="Relaxation">Nghỉ dưỡng</option>
+            <option value="CityTour">Thành phố</option>
+            <option value="Festival">Lễ hội</option>
+            <option value="Cruise">Du thuyền</option>
+        </select>
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="City" class="form-label"></label>
+        <select asp-for="City" class="form-select" id="citySelect" required>
+            <option value="" selected disabled>Select a city</option>
+            @foreach (var city in ViewBag.Cities)
+            {
+                <option value="@city.Text">@city.Text</option>
+            }
+        </select>
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="District" class="form-label"></label>
+        <select asp-for="District" class="form-select" id="districtSelect" disabled>
+            <option value="" selected disabled>Select a district</option>
+        </select>
+        <span asp-validation-for="District" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Ward" class="form-label"></label>
+        <select asp-for="Ward" class="form-select" id="wardSelect" disabled>
+            <option value="" selected disabled>Select a ward</option>
+        </select>
+        <span asp-validation-for="Ward" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address" class="form-label"></label>
+        <input asp-for="Address" type="text" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Country" class="form-label"></label>
+        <select asp-for="Country" class="form-control" required>
+            <option value="Viet Nam" selected>Việt Nam</option>
+        </select>
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-area="Admin" asp-controller="Destination" asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
+
+
+@section script{
+    <script>
+        $(document).ready(function () {
+            $('#citySelect').change(function () {
+                const cityCode = $(this).val();
+                console.log(cityCode);
+                $('#districtSelect').html('<option value="" selected disabled>Loading...</option>');
+                $('#districtSelect').prop('disabled', true);
+                $('#wardSelect').html('<option value="" selected disabled>Select a ward</option>');
+                $('#wardSelect').prop('disabled', true);
+
+                if (cityCode) {
+                    $.ajax({
+                        url: `/Admin/Destination/GetDistricts?cityCode=${cityCode}`,
+                        method: 'GET',
+                        success: function (districts) {
+                            $('#districtSelect').html('<option value="" selected disabled>Select a district</option>');
+                            districts.forEach(d => {
+                                $('#districtSelect').append(`<option value="${d.value}">${d.text}</option>`);
+                            });
+                            $('#districtSelect').prop('disabled', false);
+                        },
+                        error: function () {
+                            alert("Failed to load districts.");
+                        }
+                    });
+                }
+            });
+
+            $('#districtSelect').change(function () {
+                const districtName = $(this).val();
+                const cityCode = $('#citySelect').val();
+                $('#wardSelect').html('<option value="" selected disabled>Loading...</option>');
+                $('#wardSelect').prop('disabled', true);
+
+                if (districtName && cityCode) {
+                    $.ajax({
+                        url: `/Admin/Destination/GetWards?cityCode=${cityCode}&districtName=${districtName}`,
+                        method: 'GET',
+                        success: function (wards) {
+                            $('#wardSelect').html('<option value="" selected disabled>Select a ward</option>');
+                            wards.forEach(w => {
+                                $('#wardSelect').append(`<option value="${w.value}">${w.text}</option>`);
+                            });
+                            $('#wardSelect').prop('disabled', false);
+                        },
+                        error: function () {
+                            alert('Failed to load wards.');
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('imagePreview');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = '#';
+                preview.style.display = 'none';
+            }
+        }
+    </script>
+
+}

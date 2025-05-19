@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "BookingTour.API\\Properties\\launchSettings.json",
@@ -92,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TourController.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Controllers\\TourController.cs",
               "RelativeDocumentMoniker": "BookingTour.API\\Controllers\\TourController.cs",
@@ -105,13 +105,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Program.cs",
               "RelativeDocumentMoniker": "BookingTour.API\\Program.cs",
               "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Program.cs",
               "RelativeToolTip": "BookingTour.API\\Program.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAcwBIAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T11:44:48.967Z",
               "EditorCaption": ""

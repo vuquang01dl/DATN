@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Application\\Application.csproj": {}
+    "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Application\\Application.csproj": {
+    "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\V5030587\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Application\\obj\\",
+        "outputPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Domain\\Domain.csproj"
+              "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Domain\\Domain.csproj"
               }
             }
           }
@@ -126,14 +126,14 @@
         }
       }
     },
-    "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Domain\\Domain.csproj": {
+    "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\V5030587\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\BookingTour\\BookingTour\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\mvc\\BookingTour\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

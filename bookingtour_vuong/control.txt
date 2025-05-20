@@ -1,0 +1,80 @@
+✅ 1. TourController (/api/tour)
+Phương thức	Endpoint	Mô tả
+GET	/api/tour	Lấy danh sách tất cả tour
+GET	/api/tour/{id}	Lấy tour theo ID
+POST	/api/tour	Thêm mới tour
+PUT	/api/tour	Cập nhật tour
+DELETE	/api/tour/{id}	Xóa tour
+
+✅ 2. BookingController (/api/booking)
+Phương thức	Endpoint	Mô tả
+GET	/api/booking	Lấy tất cả booking
+GET	/api/booking/{id}	Lấy booking theo ID
+POST	/api/booking	Thêm mới booking
+PUT	/api/booking	Cập nhật booking
+DELETE	/api/booking/{id}	Xóa booking
+
+✅ 3. CustomerController (/api/customer)
+Tương tự booking: CRUD
+
+✅ 4. EmployeeController (/api/employee)
+Tương tự customer: CRUD
+
+✅ 5. RoleController (/api/role)
+Tương tự customer: CRUD
+
+✅ 6. HotelController (/api/hotel)
+Tương tự customer: CRUD
+
+✅ 7. DestinationController (/api/destination)
+Tương tự customer: CRUD
+
+✅ 8. FeedbackController (/api/feedback)
+Tương tự customer: CRUD
+
+✅ 9. PermissionController (/api/permission)
+Tương tự customer: CRUD
+
+✅ 10. PaymentController (/api/payment)
+Tương tự customer: CRUD
+
+✅ 11. TourHotelController (/api/tourhotel) – Bảng N-N
+Phương thức	Endpoint	Mô tả
+GET	/api/tourhotel	Lấy tất cả liên kết
+GET	/api/tourhotel/{tourId}/{hotelId}	Lấy 1 liên kết theo khóa
+POST	/api/tourhotel	Tạo liên kết
+DELETE	/api/tourhotel/{tourId}/{hotelId}	Xóa liên kết
+
+✅ 12. TourEmployeeController (/api/touremployee)
+Cấu trúc giống TourHotel
+
+✅ 13. TourDestinationController (/api/tourdestination)
+Cấu trúc giống TourHotel
+
+✅ 14. AccountController (/api/account)
+Phương thức	Endpoint	Mô tả
+POST	/api/account/register	Đăng ký tài khoản
+POST	/api/account/login	Đăng nhập, trả JWT
+GET	/api/account/me	Lấy thông tin người dùng hiện tại (từ JWT)
+GET	/api/account	Lấy danh sách toàn bộ account (Admin-only)
+
+
+
+
+booking-tour-ui/
+└── src/
+    ├── views/
+    │   ├── HomeView.vue
+    │   ├── TourView.vue
+    │   ├── BookingView.vue
+    │   └── admin/
+    │       ├── AdminTourView.vue
+    │       ├── AdminBookingView.vue
+    │       ├── AdminEmployeeView.vue
+    ├── components/
+    │   ├── TourList.vue
+    │   ├── BookingForm.vue
+    │   └── ...
+    └── router/
+        └── index.js
+

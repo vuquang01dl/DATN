@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Services_Interface;
+using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingTour.API.Controllers
@@ -25,7 +26,7 @@ namespace BookingTour.API.Controllers
 
         // GET: api/tour/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById(Guid id)
         {
             var tour = await _service.GetTourByIdAsync(id);
             if (tour == null) return NotFound();
@@ -58,5 +59,13 @@ namespace BookingTour.API.Controllers
             await _service.DeleteTourAsync(id);
             return Ok(new { message = "Tour deleted successfully." });
         }
+
+        [HttpPatch("{id}/status")]
+        public async Task<IActionResult> UpdateStatus(Guid id, [FromBody] TourStatus newStatus)
+        {
+            await _service.UpdateStatusAsync(id, newStatus);
+            return Ok(new { message = "Status updated" });
+        }
+
     }
 }

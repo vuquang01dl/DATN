@@ -100,3 +100,7 @@ C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\BookingTour
 C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\BookingTour.API\obj\Debug\net9.0\BookingTour.API.pdb
 C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\BookingTour.API\obj\Debug\net9.0\BookingTour.API.genruntimeconfig.cache
 C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\BookingTour.API\obj\Debug\net9.0\ref\BookingTour.API.dll
+C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\BookingTour.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\BookingTour.API\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\BookingTour.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\BookingTour.API\bin\Debug\net9.0\BouncyCastle.Crypto.dll

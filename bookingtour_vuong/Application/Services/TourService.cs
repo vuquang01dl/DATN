@@ -36,7 +36,7 @@ namespace Application.Services
             });
         }
 
-        public async Task<TourDTO?> GetTourByIdAsync(int id)
+        public async Task<TourDTO?> GetTourByIdAsync(Guid id)
         {
             var t = await _repo.GetByIdAsync(id);
             if (t == null) return null;
@@ -85,5 +85,15 @@ namespace Application.Services
         {
             await _repo.DeleteAsync(id);
         }
+        public async Task UpdateStatusAsync(Guid id, TourStatus newStatus)
+        {
+            var tour = await _repo.GetByIdAsync(id);
+            if (tour != null)
+            {
+                tour.Status = newStatus;
+                await _repo.UpdateAsync(tour);
+            }
+        }
+
     }
 }

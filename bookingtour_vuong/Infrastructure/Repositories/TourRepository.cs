@@ -45,5 +45,11 @@ namespace Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<Tour?> GetByIdAsync(Guid id)
+        {
+            return await _context.Tours.FindAsync(id); // OK vì id là Guid
+        }
+
     }
 }

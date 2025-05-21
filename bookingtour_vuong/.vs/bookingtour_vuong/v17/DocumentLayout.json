@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\controllers\\tourcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -65,10 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EB0805F9-01DC-4AFB-9084-CC666C33876A}|Application\\Application.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\application\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB0805F9-01DC-4AFB-9084-CC666C33876A}|Application\\Application.csproj|solutionrelative:application\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\bookingtour.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33BE7F37-2AAB-B2DF-8FE5-B2D159E8B6CB}|BookingTour.API\\BookingTour.API.csproj|solutionrelative:bookingtour.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C0A6FAF-3C23-4B8E-BD9E-98EC4353D3F6}|Infrastructure\\Infrastructure.csproj|c:\\users\\v5030587\\downloads\\pypj\\datn  hoang vuong\\bookingtour_vuong\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -418,7 +418,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -434,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TourService.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\Services\\TourService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\TourService.cs",
@@ -442,12 +442,11 @@
               "RelativeToolTip": "Application\\Services\\TourService.cs",
               "ViewState": "AgIAAFQAAAAAAAAAAAAowF8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T09:47:46.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T09:47:46.224Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "TourHotelRepository.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Infrastructure\\Repositories\\TourHotelRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\TourHotelRepository.cs",
@@ -455,12 +454,11 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\TourHotelRepository.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAmwDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:00:16.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:00:16.563Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TourEmployeeRepository.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Infrastructure\\Repositories\\TourEmployeeRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\TourEmployeeRepository.cs",
@@ -468,12 +466,11 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\TourEmployeeRepository.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:05:52.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:05:52.972Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Domain\\Entities\\Customer.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Customer.cs",
@@ -481,12 +478,11 @@
               "RelativeToolTip": "Domain\\Entities\\Customer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:52:11.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:52:11.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ITourService.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\Services_Interface\\ITourService.cs",
               "RelativeDocumentMoniker": "Application\\Services_Interface\\ITourService.cs",
@@ -494,25 +490,24 @@
               "RelativeToolTip": "Application\\Services_Interface\\ITourService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T09:46:50.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T09:46:50.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TourController.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Controllers\\TourController.cs",
               "RelativeDocumentMoniker": "BookingTour.API\\Controllers\\TourController.cs",
               "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Controllers\\TourController.cs",
               "RelativeToolTip": "BookingTour.API\\Controllers\\TourController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAADgvxsAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAADgvyEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T11:54:57.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TourRepository.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Infrastructure\\Repositories\\TourRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\TourRepository.cs",
@@ -520,12 +515,24 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\TourRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:42:04.51Z",
+              "WhenOpened": "2025-05-20T03:42:04.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Program.cs",
+              "RelativeDocumentMoniker": "BookingTour.API\\Program.cs",
+              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Program.cs",
+              "RelativeToolTip": "BookingTour.API\\Program.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAswFoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:44:48.967Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ITourEmployeeRepository.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Domain\\Repositories\\ITourEmployeeRepository.cs",
               "RelativeDocumentMoniker": "Domain\\Repositories\\ITourEmployeeRepository.cs",
@@ -533,12 +540,11 @@
               "RelativeToolTip": "Domain\\Repositories\\ITourEmployeeRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:04:33.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:04:33.104Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "TourEmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\Services\\TourEmployeeService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\TourEmployeeService.cs",
@@ -546,12 +552,11 @@
               "RelativeToolTip": "Application\\Services\\TourEmployeeService.cs",
               "ViewState": "AgIAADEAAAAAAAAAAADgvz8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:05:29.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:05:29.855Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ITourRepository.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Domain\\Repositories\\ITourRepository.cs",
               "RelativeDocumentMoniker": "Domain\\Repositories\\ITourRepository.cs",
@@ -559,12 +564,11 @@
               "RelativeToolTip": "Domain\\Repositories\\ITourRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T09:44:53.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T09:44:53.576Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "ITourEmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\Services_Interface\\ITourEmployeeService.cs",
               "RelativeDocumentMoniker": "Application\\Services_Interface\\ITourEmployeeService.cs",
@@ -572,12 +576,11 @@
               "RelativeToolTip": "Application\\Services_Interface\\ITourEmployeeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:05:08.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:05:08.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "TourEmployeeController.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Controllers\\TourEmployeeController.cs",
               "RelativeDocumentMoniker": "BookingTour.API\\Controllers\\TourEmployeeController.cs",
@@ -585,12 +588,11 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\TourEmployeeController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAmwDMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:06:15.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:06:15.39Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "TourEmployeeDTO.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\DTOs\\TourEmployeeDTO.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\TourEmployeeDTO.cs",
@@ -598,12 +600,11 @@
               "RelativeToolTip": "Application\\DTOs\\TourEmployeeDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:04:49.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:04:49.689Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "TourEmployee.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Domain\\Entities\\TourEmployee.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\TourEmployee.cs",
@@ -611,12 +612,11 @@
               "RelativeToolTip": "Domain\\Entities\\TourEmployee.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:03:59.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:03:59.229Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Tour.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Domain\\Entities\\Tour.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Tour.cs",
@@ -624,12 +624,11 @@
               "RelativeToolTip": "Domain\\Entities\\Tour.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T09:44:07.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T09:44:07.211Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "AccountService.cs",
               "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\Application\\Services\\AccountService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\AccountService.cs",
@@ -637,21 +636,7 @@
               "RelativeToolTip": "Application\\Services\\AccountService.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:16:53.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Program.cs",
-              "RelativeDocumentMoniker": "BookingTour.API\\Program.cs",
-              "ToolTip": "C:\\Users\\V5030587\\Downloads\\pypj\\DATN  Hoang Vuong\\bookingtour_vuong\\BookingTour.API\\Program.cs",
-              "RelativeToolTip": "BookingTour.API\\Program.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAswC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T11:44:48.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:16:53.728Z"
             },
             {
               "$type": "Document",
@@ -663,8 +648,7 @@
               "RelativeToolTip": "Infrastructure\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAA3wB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T09:54:02.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T09:54:02.698Z"
             },
             {
               "$type": "Document",
@@ -676,8 +660,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\AccountController.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAmwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:17:57.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:17:57.913Z"
             },
             {
               "$type": "Document",
@@ -689,8 +672,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\AccountRepository.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAiwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:17:35.164Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:17:35.164Z"
             },
             {
               "$type": "Document",
@@ -702,8 +684,7 @@
               "RelativeToolTip": "Domain\\Repositories\\IAccountRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:17:16.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:17:16.694Z"
             },
             {
               "$type": "Document",
@@ -715,8 +696,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\IAccountService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:16:38.41Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:16:38.41Z"
             },
             {
               "$type": "Document",
@@ -728,8 +708,7 @@
               "RelativeToolTip": "Application\\DTOs\\LoginDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:16:13.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:16:13.051Z"
             },
             {
               "$type": "Document",
@@ -741,8 +720,7 @@
               "RelativeToolTip": "Application\\DTOs\\RegisterDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:15:59.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:15:59.288Z"
             },
             {
               "$type": "Document",
@@ -754,8 +732,7 @@
               "RelativeToolTip": "Application\\DTOs\\AccountDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:15:46.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:15:46.552Z"
             },
             {
               "$type": "Document",
@@ -767,8 +744,7 @@
               "RelativeToolTip": "Domain\\Entities\\Account.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:10:11.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:10:11.487Z"
             },
             {
               "$type": "Document",
@@ -780,8 +756,7 @@
               "RelativeToolTip": "BookingTour.API\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-19T11:55:29.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T11:55:29.281Z"
             },
             {
               "$type": "Document",
@@ -793,8 +768,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\TourDestinationController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAmwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:11:13.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:11:13.69Z"
             },
             {
               "$type": "Document",
@@ -806,8 +780,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\TourDestinationRepository.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAmwDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:10:55.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:10:55.225Z"
             },
             {
               "$type": "Document",
@@ -819,8 +792,7 @@
               "RelativeToolTip": "Application\\Services\\TourDestinationService.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAmwDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:10:28.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:10:28.511Z"
             },
             {
               "$type": "Document",
@@ -832,8 +804,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\ITourDestinationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:10:04.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:10:04.219Z"
             },
             {
               "$type": "Document",
@@ -845,8 +816,7 @@
               "RelativeToolTip": "Application\\DTOs\\TourDestinationDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:09:43.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:09:43.674Z"
             },
             {
               "$type": "Document",
@@ -858,8 +828,7 @@
               "RelativeToolTip": "Domain\\Repositories\\ITourDestinationRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:09:21.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:09:21.917Z"
             },
             {
               "$type": "Document",
@@ -871,8 +840,7 @@
               "RelativeToolTip": "Domain\\Entities\\TourDestination.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:07:44.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:07:44.85Z"
             },
             {
               "$type": "Document",
@@ -884,8 +852,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\TourHotelController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:00:36.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:00:36.549Z"
             },
             {
               "$type": "Document",
@@ -897,8 +864,7 @@
               "RelativeToolTip": "Application\\Services\\TourHotelService.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAmwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:59:51.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:59:51.766Z"
             },
             {
               "$type": "Document",
@@ -910,8 +876,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\ITourHotelService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:59:33.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:59:33.863Z"
             },
             {
               "$type": "Document",
@@ -923,8 +888,7 @@
               "RelativeToolTip": "Application\\DTOs\\TourHotelDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:59:18.409Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:59:18.409Z"
             },
             {
               "$type": "Document",
@@ -936,8 +900,7 @@
               "RelativeToolTip": "Domain\\Repositories\\ITourHotelRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:59:00.55Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:59:00.55Z"
             },
             {
               "$type": "Document",
@@ -949,8 +912,7 @@
               "RelativeToolTip": "Domain\\Entities\\TourHotel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:58:01.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:58:01.259Z"
             },
             {
               "$type": "Document",
@@ -962,8 +924,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\PaymentController.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAmwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:56:58.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:56:58.439Z"
             },
             {
               "$type": "Document",
@@ -975,8 +936,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\PaymentRepository.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAgwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:55:31.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:55:31.918Z"
             },
             {
               "$type": "Document",
@@ -988,8 +948,7 @@
               "RelativeToolTip": "Application\\Services\\PaymentService.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAmwFAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:54:43.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:54:43.827Z"
             },
             {
               "$type": "Document",
@@ -1001,8 +960,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\IPaymentService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:54:28.231Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:54:28.231Z"
             },
             {
               "$type": "Document",
@@ -1014,8 +972,7 @@
               "RelativeToolTip": "Application\\DTOs\\PaymentDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:54:07.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:54:07.218Z"
             },
             {
               "$type": "Document",
@@ -1027,8 +984,7 @@
               "RelativeToolTip": "Domain\\Repositories\\IPaymentRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:53:47.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:53:47.883Z"
             },
             {
               "$type": "Document",
@@ -1040,8 +996,7 @@
               "RelativeToolTip": "Domain\\Entities\\Payment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:52:45.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:52:45.014Z"
             },
             {
               "$type": "Document",
@@ -1053,8 +1008,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\PermissionRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:37:02.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:37:02.028Z"
             },
             {
               "$type": "Document",
@@ -1066,8 +1020,7 @@
               "RelativeToolTip": "Application\\Services\\PermissionService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:36:32.05Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:36:32.05Z"
             },
             {
               "$type": "Document",
@@ -1079,8 +1032,7 @@
               "RelativeToolTip": "Domain\\Entities\\Permission.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:33:49.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:33:49.043Z"
             },
             {
               "$type": "Document",
@@ -1092,8 +1044,7 @@
               "RelativeToolTip": "Domain\\Repositories\\IPermissionRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:35:17.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:35:17.335Z"
             },
             {
               "$type": "Document",
@@ -1105,8 +1056,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\PermissionController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:37:35.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:37:35.775Z"
             },
             {
               "$type": "Document",
@@ -1118,8 +1068,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\IPermissionService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:36:04.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:36:04.007Z"
             },
             {
               "$type": "Document",
@@ -1131,8 +1080,7 @@
               "RelativeToolTip": "Application\\DTOs\\PermissionDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:35:39.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:35:39.642Z"
             },
             {
               "$type": "Document",
@@ -1144,8 +1092,7 @@
               "RelativeToolTip": "Domain\\Entities\\Feedback.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:32:34.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:32:34.865Z"
             },
             {
               "$type": "Document",
@@ -1157,8 +1104,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\FeedbackController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:30:56.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:30:56.2Z"
             },
             {
               "$type": "Document",
@@ -1170,8 +1116,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\FeedbackRepository.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAAwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:30:33.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:30:33.902Z"
             },
             {
               "$type": "Document",
@@ -1183,8 +1128,7 @@
               "RelativeToolTip": "Application\\Services\\FeedbackService.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAAwE0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:29:50.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:29:50.103Z"
             },
             {
               "$type": "Document",
@@ -1196,8 +1140,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\IFeedbackService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:29:34.768Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:29:34.768Z"
             },
             {
               "$type": "Document",
@@ -1209,8 +1152,7 @@
               "RelativeToolTip": "Application\\DTOs\\FeedbackDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:29:16.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:29:16.316Z"
             },
             {
               "$type": "Document",
@@ -1222,8 +1164,7 @@
               "RelativeToolTip": "Domain\\Repositories\\IFeedbackRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:28:42.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:28:42.951Z"
             },
             {
               "$type": "Document",
@@ -1235,8 +1176,7 @@
               "RelativeToolTip": "Domain\\Entities\\Hotel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:24:13.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:24:13.375Z"
             },
             {
               "$type": "Document",
@@ -1248,8 +1188,7 @@
               "RelativeToolTip": "Domain\\Entities\\Destination.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAQwA4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:22:36.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:22:36.048Z"
             },
             {
               "$type": "Document",
@@ -1261,8 +1200,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\DestinationController.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAQwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:21:29.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:21:29.183Z"
             },
             {
               "$type": "Document",
@@ -1274,8 +1212,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\DestinationRepository.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAQwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:21:11.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:21:11.34Z"
             },
             {
               "$type": "Document",
@@ -1287,8 +1224,7 @@
               "RelativeToolTip": "Application\\Services\\DestinationService.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAqwB0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:20:39.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:20:39.432Z"
             },
             {
               "$type": "Document",
@@ -1300,8 +1236,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\IDestinationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:20:20.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:20:20.453Z"
             },
             {
               "$type": "Document",
@@ -1313,8 +1248,7 @@
               "RelativeToolTip": "Application\\Services\\HotelService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:16:34.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:16:34.343Z"
             },
             {
               "$type": "Document",
@@ -1326,8 +1260,7 @@
               "RelativeToolTip": "Application\\DTOs\\DestinationDTO.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:19:53.454Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:19:53.454Z"
             },
             {
               "$type": "Document",
@@ -1339,8 +1272,7 @@
               "RelativeToolTip": "Domain\\Repositories\\IDestinationRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:19:24.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:19:24.112Z"
             },
             {
               "$type": "Document",
@@ -1352,8 +1284,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\HotelController.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAQwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:17:33.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:17:33.202Z"
             },
             {
               "$type": "Document",
@@ -1365,8 +1296,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\HotelRepository.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAQwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:16:58.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:16:58.095Z"
             },
             {
               "$type": "Document",
@@ -1378,8 +1308,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\IHotelService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:16:10.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:16:10.843Z"
             },
             {
               "$type": "Document",
@@ -1391,8 +1320,7 @@
               "RelativeToolTip": "Application\\DTOs\\HotelDTO.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:15:47.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:15:47.053Z"
             },
             {
               "$type": "Document",
@@ -1404,8 +1332,7 @@
               "RelativeToolTip": "Domain\\Repositories\\IHotelRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:14:56.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:14:56.212Z"
             },
             {
               "$type": "Document",
@@ -1417,8 +1344,7 @@
               "RelativeToolTip": "Domain\\Entities\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:07:46.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:07:46.056Z"
             },
             {
               "$type": "Document",
@@ -1430,8 +1356,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\RoleController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAkwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:06:37.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:06:37.159Z"
             },
             {
               "$type": "Document",
@@ -1443,8 +1368,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\RoleRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAYwCsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:06:16.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:06:16.658Z"
             },
             {
               "$type": "Document",
@@ -1456,8 +1380,7 @@
               "RelativeToolTip": "Application\\Services\\RoleService.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAYwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:05:43.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:05:43.748Z"
             },
             {
               "$type": "Document",
@@ -1469,8 +1392,7 @@
               "RelativeToolTip": "BookingTour.API\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-19T12:02:08.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-19T12:02:08.923Z"
             },
             {
               "$type": "Document",
@@ -1482,8 +1404,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\IRoleService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:05:28.082Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:05:28.082Z"
             },
             {
               "$type": "Document",
@@ -1495,8 +1416,7 @@
               "RelativeToolTip": "Application\\DTOs\\RoleDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:05:12.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:05:12.728Z"
             },
             {
               "$type": "Document",
@@ -1508,8 +1428,7 @@
               "RelativeToolTip": "Domain\\Repositories\\IRoleRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:04:48.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:04:48.783Z"
             },
             {
               "$type": "Document",
@@ -1521,8 +1440,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\EmployeeController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAkwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:02:54.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:02:54.244Z"
             },
             {
               "$type": "Document",
@@ -1534,8 +1452,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\EmployeeRepository.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAA5wDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:02:34.089Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:02:34.089Z"
             },
             {
               "$type": "Document",
@@ -1547,8 +1464,7 @@
               "RelativeToolTip": "Application\\Services\\EmployeeService.cs",
               "ViewState": "AgIAAD0AAAAAAAAAAAAkwFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:02:04.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:02:04.504Z"
             },
             {
               "$type": "Document",
@@ -1560,8 +1476,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\IEmployeeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:01:46.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:01:46.284Z"
             },
             {
               "$type": "Document",
@@ -1573,8 +1488,7 @@
               "RelativeToolTip": "Application\\DTOs\\EmployeeDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:01:25.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:01:25.448Z"
             },
             {
               "$type": "Document",
@@ -1586,8 +1500,7 @@
               "RelativeToolTip": "Domain\\Repositories\\IEmployeeRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T02:00:59.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T02:00:59.043Z"
             },
             {
               "$type": "Document",
@@ -1599,8 +1512,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\CustomerController.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAkwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:56:14.647Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:56:14.647Z"
             },
             {
               "$type": "Document",
@@ -1612,8 +1524,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\CustomerRepository.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAA5wDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:55:50.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:55:50.246Z"
             },
             {
               "$type": "Document",
@@ -1625,8 +1536,7 @@
               "RelativeToolTip": "Application\\Services\\CustomerService.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAqwF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:55:10.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:55:10.989Z"
             },
             {
               "$type": "Document",
@@ -1638,8 +1548,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\ICustomerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:54:33.684Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:54:33.684Z"
             },
             {
               "$type": "Document",
@@ -1651,8 +1560,7 @@
               "RelativeToolTip": "Application\\DTOs\\CustomerDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:54:11.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:54:11.866Z"
             },
             {
               "$type": "Document",
@@ -1664,8 +1572,7 @@
               "RelativeToolTip": "Domain\\Repositories\\ICustomerRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:53:06.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:53:06.865Z"
             },
             {
               "$type": "Document",
@@ -1677,8 +1584,7 @@
               "RelativeToolTip": "Infrastructure\\Repositories\\BookingRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:47:24.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:47:24.154Z"
             },
             {
               "$type": "Document",
@@ -1690,8 +1596,7 @@
               "RelativeToolTip": "BookingTour.API\\Controllers\\BookingController.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAywDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:47:55.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:47:55.861Z"
             },
             {
               "$type": "Document",
@@ -1703,8 +1608,7 @@
               "RelativeToolTip": "Application\\Services\\BookingService.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAwwGEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:46:53.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:46:53.263Z"
             },
             {
               "$type": "Document",
@@ -1716,8 +1620,7 @@
               "RelativeToolTip": "Domain\\Repositories\\IBookingRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:44:48.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:44:48.712Z"
             },
             {
               "$type": "Document",
@@ -1729,8 +1632,7 @@
               "RelativeToolTip": "Application\\Services_Interface\\IBookingService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:46:13.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:46:13.472Z"
             },
             {
               "$type": "Document",
@@ -1742,8 +1644,7 @@
               "RelativeToolTip": "Application\\DTOs\\BookingDTO.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAcwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T01:45:32.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T01:45:32.488Z"
             },
             {
               "$type": "Document",

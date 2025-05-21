@@ -25,12 +25,7 @@
       </tbody>
     </table>
 
-    <FormTourModal
-      :visible="showModal"
-      :tour="editingTour"
-      @save="handleSaveTour"
-      @close="showModal = false"
-    />
+    <FormTourModal :visible="showModal" :tour="selectedTour" @save="saveTour" @close="showModal = false" />
   </div>
 </template>
 
@@ -74,4 +69,3 @@ export default {
   }
 }
 </script>
-

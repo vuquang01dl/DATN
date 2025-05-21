@@ -1,77 +1,51 @@
 <template>
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">Lịch sử đặt tour</h2>
-    <div v-if="bookings.length > 0" class="table-responsive">
-      <table class="table table-striped">
-        <thead class="table-dark">
-          <tr>
-            <th>#</th>
-            <th>Tên tour</th>
-            <th>Ngày bắt đầu</th>
-            <th>Ngày kết thúc</th>
-            <th>Số người</th>
-            <th>Trạng thái</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(booking, index) in bookings" :key="booking.id">
-            <td>{{ index + 1 }}</td>
-            <td>{{ booking.tourName }}</td>
-            <td>{{ booking.startDate }}</td>
-            <td>{{ booking.endDate }}</td>
-            <td>{{ booking.peopleCount }}</td>
-            <td>
-              <span :class="statusClass(booking.status)">
-                {{ statusLabel(booking.status) }}
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Lịch sử đặt tour của bạn</h2>
+
+    <div v-if="bookings.length > 0" class="row g-4">
+      <div class="col-md-6" v-for="booking in bookings" :key="booking.id">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ booking.tourName }}</h5>
+            <p class="mb-1"><i class="bi bi-calendar-event"></i> Từ: <strong>{{ booking.startDate }}</strong></p>
+            <p class="mb-1"><i class="bi bi-calendar-check"></i> Đến: <strong>{{ booking.endDate }}</strong></p>
+            <p class="mb-1"><i class="bi bi-people"></i> Số người: <strong>{{ booking.peopleCount }}</strong></p>
+            <span :class="['badge', statusClass(booking.status)]">{{ statusLabel(booking.status) }}</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div v-else class="text-center text-muted">
+    <div v-else class="text-center text-muted mt-5">
       <p>Bạn chưa đặt tour nào.</p>
     </div>
   </div>
 </template>
 
 <script>
-// import axios from 'axios'
-
 export default {
-  name: 'BookingView',
+  name: 'MyBookingView',
   data() {
     return {
-      bookings: []
+      bookings: [
+        {
+          id: 1,
+          tourName: 'Tour Nha Trang 3N2Đ',
+          startDate: '2025-07-01',
+          endDate: '2025-07-03',
+          peopleCount: 2,
+          status: 'confirmed'
+        },
+        {
+          id: 2,
+          tourName: 'Tour Hạ Long 2N1Đ',
+          startDate: '2025-08-15',
+          endDate: '2025-08-16',
+          peopleCount: 4,
+          status: 'pending'
+        }
+      ]
     }
-  },
-  async mounted() {
-    // ✅ Dữ liệu đặt tour giả
-    this.bookings = [
-      {
-        id: 1,
-        tourName: 'Tour Nha Trang 3N2Đ',
-        startDate: '2025-07-01',
-        endDate: '2025-07-03',
-        peopleCount: 2,
-        status: 'confirmed' // or 'pending' | 'canceled'
-      },
-      {
-        id: 2,
-        tourName: 'Tour Hạ Long 2N1Đ',
-        startDate: '2025-08-15',
-        endDate: '2025-08-16',
-        peopleCount: 4,
-        status: 'pending'
-      }
-    ]
-
-    // ❗ Khi có backend:
-    /*
-    const res = await axios.get('http://localhost:5017/api/booking/user');
-    this.bookings = res.data;
-    */
   },
   methods: {
     statusLabel(status) {
@@ -84,11 +58,22 @@ export default {
     },
     statusClass(status) {
       return {
-        'badge bg-success': status === 'confirmed',
-        'badge bg-warning text-dark': status === 'pending',
-        'badge bg-danger': status === 'canceled'
-      }
+        confirmed: 'bg-success text-white',
+        pending: 'bg-warning text-dark',
+        canceled: 'bg-danger text-white'
+      }[status]
     }
   }
 }
 </script>
+
+<style scoped>
+.card-title {
+  font-weight: bold;
+}
+.badge {
+  padding: 0.5em 0.75em;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+}
+</style>

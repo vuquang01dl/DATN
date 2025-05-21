@@ -10,13 +10,16 @@ import TourManagementView from '../views/TourManagementView.vue'
 import AccountManagementView from '../views/admin/AccountManagementView.vue'
 import BookingManagementView from '../views/admin/BookingManagementView.vue'
 import TourStatusView from '../views/TourStatusView.vue'
+import TourAssignmentView from '../views/admin/TourAssignmentView.vue'
+import DestinationManagementView from '../views/admin/DestinationManagementView.vue'
+import HotelManagementView from '../views/admin/HotelManagementView.vue'
 
 
 
 const routes = [
     { path: '/', name: 'Home', component: HomeView },
     { path: '/tours/:id', name: 'TourDetail', component: TourDetailView },
-    { path: '/booking', name: 'Booking', component: BookingView },
+    { path: '/my-bookings', name: 'Booking', component: BookingView },
     { path: '/bookingform', name: 'BookingForm', component: BookingForm },
     { path: '/login', name: 'Login', component: LoginView },
     { path: '/register', name: 'Register', component: RegisterView },
@@ -46,6 +49,21 @@ const routes = [
         path: '/tourstatus',
         name: 'TourStatus',
         component: TourStatusView
+    },
+    {
+        path: '/admin/assign',
+        name: 'Assignments',
+        component: TourAssignmentView
+    },
+    {
+        path: '/admin/destinations',
+        name: 'DestinationManagement',
+        component: DestinationManagementView
+    },
+    {
+        path: '/admin/hotels',
+        name: 'HotelManagement',
+        component: HotelManagementView
     },
 
 

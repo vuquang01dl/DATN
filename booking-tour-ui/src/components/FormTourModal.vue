@@ -5,16 +5,16 @@
         <h5 class="modal-title mb-3">{{ form.id ? 'Sửa' : 'Thêm' }} Tour</h5>
 
         <form @submit.prevent="submitForm">
-          <input v-model="form.name" placeholder="Tên tour" class="form-control mb-2" />
-          <input v-model.number="form.price" placeholder="Giá (VND)" type="number" class="form-control mb-2" />
-          <textarea v-model="form.description" placeholder="Mô tả" class="form-control mb-2" />
+          <input v-model="form.name" placeholder="Tên tour" class="form-control mb-2" required />
+          <input v-model.number="form.price" placeholder="Giá (VND)" type="number" class="form-control mb-2" required />
+          <textarea v-model="form.description" placeholder="Mô tả" class="form-control mb-2" required></textarea>
 
-          <input v-model="form.startDate" type="date" class="form-control mb-2" />
-          <input v-model="form.endDate" type="date" class="form-control mb-2" />
+          <input v-model="form.startDate" type="date" class="form-control mb-2" required />
+          <input v-model="form.endDate" type="date" class="form-control mb-2" required />
 
           <div class="mb-2">
             <label>Địa điểm</label>
-            <select v-model="form.destinationId" class="form-select">
+            <select v-model="form.destinationId" class="form-select" required>
               <option disabled value="">-- Chọn địa điểm --</option>
               <option v-for="d in destinations" :key="d.id" :value="d.id">
                 {{ d.name }}
@@ -115,7 +115,16 @@ export default {
         return;
       }
 
-      this.$emit('save', this.form);
+      // Gửi API thật nếu cần
+      // if (this.form.id) {
+      //   axios.put(`http://localhost:5017/api/tour/${this.form.id}`, this.form)
+      //     .then(() => this.$emit('save', this.form));
+      // } else {
+      //   axios.post('http://localhost:5017/api/tour', this.form)
+      //     .then(() => this.$emit('save', this.form));
+      // }
+
+      this.$emit('save', this.form); // Xử lý local/demo
     }
   }
 }

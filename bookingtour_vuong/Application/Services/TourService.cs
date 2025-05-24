@@ -15,10 +15,19 @@ namespace Application.Services
     public class TourService : ITourService
     {
         private readonly ITourRepository _repo;
+        private readonly IBookingRepository _bookingRepo;
+        private readonly ICustomerRepository _customerRepo;
+
 
         public TourService(ITourRepository repo)
         {
             _repo = repo;
+        }
+        public TourService(ITourRepository repo, IBookingRepository bookingRepo, ICustomerRepository customerRepo)
+        {
+            _repo = repo;
+            _bookingRepo = bookingRepo;
+            _customerRepo = customerRepo;
         }
 
         public async Task<IEnumerable<TourDTO>> GetAllToursAsync()
@@ -94,6 +103,53 @@ namespace Application.Services
                 await _repo.UpdateAsync(tour);
             }
         }
+
+        public async Task<IEnumerable<TourStatusDTO>> GetAllTourStatusesAsync()
+        {
+            var bookings = (await _bookingRepo.GetAllAsync()).Cast<Booking>().ToList();
+            var tours = (await _repo.GetAllAsync()).Cast<Tour>().ToList();
+            var customers = (await _customerRepo.GetAllAsync()).Cast<Customer>().ToList();
+
+            var bookingTour = bookings
+                .Join(tours,
+                      b => b.TourID,
+                      t => t.Id,
+                      (b, t) => new BookingTourJoin { Booking = b, Tour = t });
+
+            var result = bookingTour
+                .Join(customers,
+                      bt => bt.Booking.CustomerID,
+                      c => c.CustomerID,
+                      (bt, c) => new TourStatusDTO
+                      {
+                          TourName = bt.Tour.Name,
+                          CustomerName = c.LastName,
+                          BookingDate = bt.Booking.CreateAt.ToString("yyyy-MM-dd"),
+                          Status = GetStatus(bt.Tour.StartDate, bt.Tour.EndDate)
+                      });
+
+            return result.ToList();
+        }
+
+        // Class tạm dùng cho Join
+        private class BookingTourJoin
+        {
+            public Booking Booking { get; set; }
+            public Tour Tour { get; set; }
+        }
+
+
+
+
+        private string GetStatus(DateTime start, DateTime end)
+        {
+            var today = DateTime.Today;
+            if (today < start) return "Chưa bắt đầu";
+            if (today >= start && today <= end) return "Đang diễn ra";
+            return "Đã kết thúc";
+        }
+
+
 
     }
 }

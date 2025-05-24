@@ -43,7 +43,7 @@ namespace BookingTour.API.Controllers
 
         // PUT: api/tour/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] TourDTO dto)
+        public async Task<IActionResult> Update(Guid id, [FromBody] TourDTO dto)
         {
             if (id != dto.Id)
                 return BadRequest("ID mismatch");
@@ -66,6 +66,13 @@ namespace BookingTour.API.Controllers
             await _service.UpdateStatusAsync(id, newStatus);
             return Ok(new { message = "Status updated" });
         }
+        [HttpGet("status")]
+        public async Task<IActionResult> GetTourStatuses()
+        {
+            var statuses = await _service.GetAllTourStatusesAsync(); // bạn cần implement
+            return Ok(statuses);
+        }
+
 
     }
 }

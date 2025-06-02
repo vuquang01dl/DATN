@@ -36,7 +36,7 @@ namespace Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Guid id)
         {
             var tour = await _context.Tours.FindAsync(id);
             if (tour != null)
@@ -50,6 +50,11 @@ namespace Infrastructure.Repositories
         {
             return await _context.Tours.FindAsync(id); // OK vì id là Guid
         }
+        public async Task<Tour?> GetByNameAsync(string tourName)
+        {
+            return await _context.Tours.FirstOrDefaultAsync(t => t.Name == tourName);
+        }
+
 
     }
 }

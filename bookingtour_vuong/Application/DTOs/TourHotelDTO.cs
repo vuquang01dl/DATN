@@ -8,7 +8,8 @@ namespace Application.DTOs
 {
     public class TourHotelDTO
     {
-        public Guid TourID { get; set; }
-        public Guid HotelID { get; set; }
+        public string TourName { get; set; }
+        public string HotelName { get; set; }
     }
+
 }

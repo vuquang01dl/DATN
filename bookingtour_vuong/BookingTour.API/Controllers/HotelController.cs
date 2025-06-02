@@ -1,6 +1,8 @@
 ﻿using Application.DTOs;
 using Application.Services_Interface;
 using Microsoft.AspNetCore.Mvc;
+using Application.DTOs;
+using Application.DTOs.Application.DTOs;
 
 namespace BookingTour.API.Controllers
 {

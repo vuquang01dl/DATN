@@ -8,8 +8,9 @@ namespace Application.DTOs
 {
     public class TourEmployeeDTO
     {
-        public Guid TourID { get; set; }
-        public Guid EmployeeID { get; set; }
+        public Guid TourId { get; set; }
+        public Guid EmployeeId { get; set; }
         public bool IsLeader { get; set; }
     }
+
 }

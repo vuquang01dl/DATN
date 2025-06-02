@@ -4,6 +4,7 @@ namespace Domain.Entities
 {
     public class Destination
     {
+        [Key]
         public Guid DestinationID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -16,7 +17,6 @@ namespace Domain.Entities
         public string District { get; set; }
         public string Ward { get; set; }
         public string? Location { get; set; }
-
 
         public virtual ICollection<TourDestination> TourDestinations { get; set; }
     }

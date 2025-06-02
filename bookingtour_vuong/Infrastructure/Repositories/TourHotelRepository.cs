@@ -22,14 +22,12 @@ namespace Infrastructure.Repositories
 
         public async Task<IEnumerable<TourHotel>> GetAllAsync()
         {
-            return await _context.TourHotels.ToListAsync();
+            return await _context.TourHotels
+                .Include(th => th.Tour)
+                .Include(th => th.Hotel)
+                .ToListAsync();
         }
 
-        public async Task<TourHotel?> GetByKeysAsync(Guid tourId, Guid hotelId)
-        {
-            return await _context.TourHotels
-                .FirstOrDefaultAsync(x => x.TourID == tourId && x.HotelID == hotelId);
-        }
 
         public async Task AddAsync(TourHotel entity)
         {
@@ -46,5 +44,33 @@ namespace Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<TourHotel?> GetByNamesAsync(string tourName, string hotelName)
+        {
+            return await _context.TourHotels
+                .Include(th => th.Tour)
+                .Include(th => th.Hotel)
+                .FirstOrDefaultAsync(th =>
+                    th.Tour.Name == tourName && th.Hotel.Name == hotelName);
+        }
+
+        public async Task DeleteAsync(string tourName, string hotelName)
+        {
+            var entity = await GetByNamesAsync(tourName, hotelName);
+            if (entity != null)
+            {
+                _context.TourHotels.Remove(entity);
+                await _context.SaveChangesAsync();
+            }
+        }
+        public async Task<TourHotel?> GetByKeysAsync(Guid tourId, Guid hotelId)
+        {
+            return await _context.TourHotels
+                .Include(th => th.Tour)
+                .Include(th => th.Hotel)
+                .FirstOrDefaultAsync(th => th.TourId == tourId && th.HotelId == hotelId);
+        }
+
+
     }
 }

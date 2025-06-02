@@ -25,8 +25,9 @@ namespace Application.Services
             var list = await _repo.GetAllAsync();
             return list.Select(te => new TourEmployeeDTO
             {
-                TourID = te.TourID,
-                EmployeeID = te.EmployeeID
+                TourId = te.TourId,
+                EmployeeId = te.EmployeeId,
+                IsLeader = te.IsLeader
             });
         }
 
@@ -36,8 +37,9 @@ namespace Application.Services
             if (te == null) return null;
             return new TourEmployeeDTO
             {
-                TourID = te.TourID,
-                EmployeeID = te.EmployeeID
+                TourId = te.TourId,
+                EmployeeId = te.EmployeeId,
+                IsLeader = te.IsLeader
             };
         }
 
@@ -45,24 +47,26 @@ namespace Application.Services
         {
             var entity = new TourEmployee
             {
-                TourID = dto.TourID,
-                EmployeeID = dto.EmployeeID
+                TourId = dto.TourId,
+                EmployeeId = dto.EmployeeId,
+                IsLeader = dto.IsLeader
             };
             await _repo.AddAsync(entity);
         }
 
-        public async Task DeleteAsync(Guid tourId, Guid employeeId)
-        {
-            await _repo.DeleteAsync(tourId, employeeId);
-        }
         public async Task UpdateAsync(TourEmployeeDTO dto)
         {
-            var entity = await _repo.GetByKeysAsync(dto.TourID, dto.EmployeeID);
+            var entity = await _repo.GetByKeysAsync(dto.TourId, dto.EmployeeId);
             if (entity != null)
             {
                 entity.IsLeader = dto.IsLeader;
                 await _repo.UpdateAsync(entity);
             }
+        }
+
+        public async Task DeleteAsync(Guid tourId, Guid employeeId)
+        {
+            await _repo.DeleteAsync(tourId, employeeId);
         }
 
 

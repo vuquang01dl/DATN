@@ -13,5 +13,7 @@ namespace Application.DTOs
         public decimal Amount { get; set; }
         public DateTime Date { get; set; }
         public Guid BookingID { get; set; }
+        public Guid CustomerID { get; set; }   // ✅ bắt buộc phải có dòng này
     }
+
 }

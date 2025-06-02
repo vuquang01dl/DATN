@@ -41,7 +41,10 @@ namespace Infrastructure.Repositories
             _context.Customers.Update(customer);
             await _context.SaveChangesAsync();
         }
-
+        public async Task<Customer?> GetByEmailAsync(string email)
+        {
+            return await _context.Customers.FirstOrDefaultAsync(x => x.Email == email);
+        }
         public async Task DeleteAsync(Guid id)
         {
             var entity = await _context.Customers.FindAsync(id);

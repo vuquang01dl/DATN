@@ -1,59 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Application.DTOs;
+﻿using Application.DTOs;
 using Application.Services_Interface;
 using Domain.Entities;
 using Domain.Repositories;
 
-namespace Application.Services
+public class TourHotelService : ITourHotelService
 {
-    public class TourHotelService : ITourHotelService
+    private readonly ITourHotelRepository _repo;
+    private readonly ITourRepository _tourRepo;
+    private readonly IHotelRepository _hotelRepo;
+
+    public TourHotelService(ITourHotelRepository repo, ITourRepository tourRepo, IHotelRepository hotelRepo)
     {
-        private readonly ITourHotelRepository _repo;
+        _repo = repo;
+        _tourRepo = tourRepo;
+        _hotelRepo = hotelRepo;
+    }
 
-        public TourHotelService(ITourHotelRepository repo)
+    public async Task<IEnumerable<TourHotelDTO>> GetAllAsync()
+    {
+        var list = await _repo.GetAllAsync();
+        // Lấy thêm tên từ Tour và Hotel
+        return list.Select(th => new TourHotelDTO
         {
-            _repo = repo;
-        }
+            TourName = th.Tour.Name,
+            HotelName = th.Hotel.Name
+        });
+    }
 
-        public async Task<IEnumerable<TourHotelDTO>> GetAllAsync()
-        {
-            var list = await _repo.GetAllAsync();
-            return list.Select(th => new TourHotelDTO
-            {
-                TourID = th.TourID,
-                HotelID = th.HotelID
-            });
-        }
+    public async Task<TourHotelDTO?> GetByNamesAsync(string tourName, string hotelName)
+    {
+        var tour = await _tourRepo.GetByNameAsync(tourName);
+        var hotel = await _hotelRepo.GetByNameAsync(hotelName);
 
-        public async Task<TourHotelDTO?> GetByKeysAsync(Guid tourId, Guid hotelId)
-        {
-            var th = await _repo.GetByKeysAsync(tourId, hotelId);
-            if (th == null) return null;
-            return new TourHotelDTO
-            {
-                TourID = th.TourID,
-                HotelID = th.HotelID
-            };
-        }
+        if (tour == null || hotel == null) return null;
+        var th = await _repo.GetByKeysAsync(tour.Id, hotel.HotelID);
+        if (th == null) return null;
 
-        public async Task AddAsync(TourHotelDTO dto)
+        return new TourHotelDTO
         {
-            var entity = new TourHotel
-            {
-                TourID = dto.TourID,
-                HotelID = dto.HotelID
-            };
-            await _repo.AddAsync(entity);
-        }
+            TourName = tour.Name,
+            HotelName = hotel.Name
+        };
+    }
 
-        public async Task DeleteAsync(Guid tourId, Guid hotelId)
+    public async Task AddAsync(TourHotelDTO dto)
+    {
+        var tour = await _tourRepo.GetByNameAsync(dto.TourName);
+        var hotel = await _hotelRepo.GetByNameAsync(dto.HotelName);
+
+        if (tour == null || hotel == null) throw new Exception("Tour hoặc Hotel không tồn tại!");
+
+        var entity = new TourHotel
         {
-            await _repo.DeleteAsync(tourId, hotelId);
-        }
+            TourId = tour.Id,
+            HotelId = hotel.HotelID
+        };
+        await _repo.AddAsync(entity);
+    }
+
+    public async Task DeleteAsync(string tourName, string hotelName)
+    {
+        // Sử dụng repository để xóa
+        await _repo.DeleteAsync(tourName, hotelName);
     }
 }

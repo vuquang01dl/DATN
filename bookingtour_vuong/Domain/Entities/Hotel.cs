@@ -1,7 +1,10 @@
-﻿namespace Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Domain.Entities
 {
     public class Hotel
     {
+        [Key]
         public Guid HotelID { get; set; }
         public string Name { get; set; }
         public int StarRating {  get; set; }

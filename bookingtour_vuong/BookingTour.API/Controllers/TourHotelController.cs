@@ -15,17 +15,10 @@ namespace BookingTour.API.Controllers
             _service = service;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
+        [HttpGet("{tourName}/{hotelName}")]
+        public async Task<IActionResult> GetByNames(string tourName, string hotelName)
         {
-            var list = await _service.GetAllAsync();
-            return Ok(list);
-        }
-
-        [HttpGet("{tourId}/{hotelId}")]
-        public async Task<IActionResult> GetByKeys(Guid tourId, Guid hotelId)
-        {
-            var item = await _service.GetByKeysAsync(tourId, hotelId);
+            var item = await _service.GetByNamesAsync(tourName, hotelName);
             return item == null ? NotFound() : Ok(item);
         }
 
@@ -36,11 +29,18 @@ namespace BookingTour.API.Controllers
             return Ok(new { message = "Created" });
         }
 
-        [HttpDelete("{tourId}/{hotelId}")]
-        public async Task<IActionResult> Delete(Guid tourId, Guid hotelId)
+        [HttpDelete("{tourName}/{hotelName}")]
+        public async Task<IActionResult> Delete(string tourName, string hotelName)
         {
-            await _service.DeleteAsync(tourId, hotelId);
+            await _service.DeleteAsync(tourName, hotelName);
             return Ok(new { message = "Deleted" });
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var items = await _service.GetAllAsync();
+            return Ok(items);
+        }
+
     }
 }

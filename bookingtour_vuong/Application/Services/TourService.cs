@@ -90,7 +90,7 @@ namespace Application.Services
             await _repo.UpdateAsync(t);
         }
 
-        public async Task DeleteTourAsync(int id)
+        public async Task DeleteTourAsync(Guid id)
         {
             await _repo.DeleteAsync(id);
         }
@@ -112,14 +112,13 @@ namespace Application.Services
 
             var bookingTour = bookings
                 .Join(tours,
-                      b => b.TourID,
+                      b => b.TourId,
                       t => t.Id,
                       (b, t) => new BookingTourJoin { Booking = b, Tour = t });
-
             var result = bookingTour
                 .Join(customers,
-                      bt => bt.Booking.CustomerID,
-                      c => c.CustomerID,
+                      bt => bt.Booking.CustomerId,
+                      c => c.CustomerID,  // ✅ Sửa tại đây
                       (bt, c) => new TourStatusDTO
                       {
                           TourName = bt.Tour.Name,
@@ -128,8 +127,10 @@ namespace Application.Services
                           Status = GetStatus(bt.Tour.StartDate, bt.Tour.EndDate)
                       });
 
+
             return result.ToList();
         }
+
 
         // Class tạm dùng cho Join
         private class BookingTourJoin
@@ -148,7 +149,6 @@ namespace Application.Services
             if (today >= start && today <= end) return "Đang diễn ra";
             return "Đã kết thúc";
         }
-
 
 
     }

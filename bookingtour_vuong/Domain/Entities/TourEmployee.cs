@@ -1,13 +1,23 @@
-﻿
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.Entities
 {
     public class TourEmployee
     {
-        public Guid TourID { get; set; }
-        public Guid EmployeeID { get; set; }
-        public virtual Tour Tour { get; set; }
-        public virtual Employee Employee { get; set; }
-        public bool IsLeader { get; set; }  // ✅ Thêm để biết ai là hướng dẫn viên chính
+        [Key, Column(Order = 0)]
+        public Guid TourId { get; set; }
 
+        [Key, Column(Order = 1)]
+        public Guid EmployeeId { get; set; }
+
+        [ForeignKey(nameof(TourId))]
+        public virtual Tour Tour { get; set; }
+
+        [ForeignKey(nameof(EmployeeId))]
+        public virtual Employee Employee { get; set; }
+
+        public bool IsLeader { get; set; }
     }
 }

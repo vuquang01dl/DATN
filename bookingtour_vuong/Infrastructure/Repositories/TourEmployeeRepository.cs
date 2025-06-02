@@ -28,8 +28,10 @@ namespace Infrastructure.Repositories
         public async Task<TourEmployee?> GetByKeysAsync(Guid tourId, Guid employeeId)
         {
             return await _context.TourEmployees
-                .FirstOrDefaultAsync(te => te.TourID == tourId && te.EmployeeID == employeeId);
+                .FirstOrDefaultAsync(te => te.TourId == tourId && te.EmployeeId == employeeId);
         }
+
+        
 
         public async Task AddAsync(TourEmployee entity)
         {

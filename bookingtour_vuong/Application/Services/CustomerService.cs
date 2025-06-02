@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Application.DTOs;
+﻿using Application.DTOs;
 using Application.Services_Interface;
 using Domain.Entities;
 using Domain.Repositories;
@@ -14,10 +8,12 @@ namespace Application.Services
     public class CustomerService : ICustomerService
     {
         private readonly ICustomerRepository _repo;
+        private readonly IAccountRepository _accountRepo;
 
-        public CustomerService(ICustomerRepository repo)
+        public CustomerService(ICustomerRepository repo, IAccountRepository accountRepo)
         {
             _repo = repo;
+            _accountRepo = accountRepo;
         }
 
         public async Task<IEnumerable<CustomerDTO>> GetAllAsync()
@@ -31,8 +27,7 @@ namespace Application.Services
                 Email = c.Email,
                 Address = c.Address,
                 Phone = c.Phone,
-                Image = c.Image,
-                AccountID = c.AccountID
+                Image = c.Image
             });
         }
 
@@ -40,6 +35,7 @@ namespace Application.Services
         {
             var c = await _repo.GetByIdAsync(id);
             if (c == null) return null;
+
             return new CustomerDTO
             {
                 CustomerID = c.CustomerID,
@@ -48,45 +44,81 @@ namespace Application.Services
                 Email = c.Email,
                 Address = c.Address,
                 Phone = c.Phone,
-                Image = c.Image,
-                AccountID = c.AccountID
+                Image = c.Image
             };
         }
 
         public async Task AddAsync(CustomerDTO dto)
         {
+            var email = dto.Email.Trim().ToLower(); // ✅ CHUẨN HÓA EMAIL
+
+            var acc = await _accountRepo.GetByEmailAsync(email);
+            if (acc == null)
+                throw new Exception("❌ Không tìm thấy tài khoản với email này.");
+
             var entity = new Customer
             {
                 CustomerID = Guid.NewGuid(),
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
-                Email = dto.Email,
+                Email = email, // ✅ sử dụng bản đã chuẩn hóa
                 Address = dto.Address,
                 Phone = dto.Phone,
-                Image = dto.Image,
-                AccountID = dto.AccountID
+                AccountID = acc.AccountID
             };
+
             await _repo.AddAsync(entity);
         }
+        public async Task<CustomerDTO?> GetByEmailAsync(string email)
+        {
+            var entity = await _repo.GetByEmailAsync(email);
+            if (entity == null) return null;
 
+            // Mapping sang DTO (sửa lại nếu bạn dùng AutoMapper)
+            return new CustomerDTO
+            {
+                CustomerID = entity.CustomerID,
+                FirstName = entity.FirstName,
+                LastName = entity.LastName,
+                Email = entity.Email,
+                Address = entity.Address,
+                Phone = entity.Phone
+            };
+        }
         public async Task UpdateAsync(CustomerDTO dto)
         {
+            var email = dto.Email.Trim().ToLower();
+            var acc = await _accountRepo.GetByEmailAsync(email);
+
+            if (acc == null)
+                throw new Exception("❌ Không tìm thấy tài khoản với email này.");
+
             var entity = new Customer
             {
                 CustomerID = dto.CustomerID,
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
-                Email = dto.Email,
+                Email = email,
                 Address = dto.Address,
                 Phone = dto.Phone,
                 Image = dto.Image,
-                AccountID = dto.AccountID
+                AccountID = acc.AccountID
             };
+
             await _repo.UpdateAsync(entity);
         }
 
         public async Task DeleteAsync(Guid id)
         {
+            var customer = await _repo.GetByIdAsync(id);
+            if (customer == null) return;
+
+            var email = customer.Email.Trim().ToLower();
+            var acc = await _accountRepo.GetByEmailAsync(email);
+
+            if (acc == null)
+                throw new Exception("❌ Không tìm thấy tài khoản, không thể xoá khách hàng.");
+
             await _repo.DeleteAsync(id);
         }
     }

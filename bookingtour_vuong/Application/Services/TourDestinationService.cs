@@ -25,36 +25,32 @@ namespace Application.Services
             var list = await _repo.GetAllAsync();
             return list.Select(td => new TourDestinationDTO
             {
-                TourID = td.TourID,
-                DestinationID = td.DestinationID
+                TourName = td.Tour?.Name ?? "",
+                DestinationName = td.Destination?.Name ?? ""
             });
         }
 
-        public async Task<TourDestinationDTO?> GetByKeysAsync(Guid tourId, Guid destinationId)
+        public async Task<TourDestinationDTO?> GetByNamesAsync(string tourName, string destinationName)
         {
-            var td = await _repo.GetByKeysAsync(tourId, destinationId);
+            var td = await _repo.GetByNamesAsync(tourName, destinationName);
             if (td == null) return null;
 
             return new TourDestinationDTO
             {
-                TourID = td.TourID,
-                DestinationID = td.DestinationID
+                TourName = td.Tour?.Name ?? "",
+                DestinationName = td.Destination?.Name ?? ""
             };
         }
 
         public async Task AddAsync(TourDestinationDTO dto)
         {
-            var entity = new TourDestination
-            {
-                TourID = dto.TourID,
-                DestinationID = dto.DestinationID
-            };
-            await _repo.AddAsync(entity);
+            await _repo.AddAsync(dto.TourName, dto.DestinationName);
         }
 
-        public async Task DeleteAsync(Guid tourId, Guid destinationId)
+        public async Task DeleteAsync(string tourName, string destinationName)
         {
-            await _repo.DeleteAsync(tourId, destinationId);
+            await _repo.DeleteAsync(tourName, destinationName);
         }
     }
+
 }

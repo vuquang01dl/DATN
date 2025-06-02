@@ -7,7 +7,7 @@ namespace Application.DTOs
 {
     public class TourDestinationDTO
     {
-        public Guid TourID { get; set; }
-        public Guid DestinationID { get; set; }
+        public string TourName { get; set; }
+        public string DestinationName { get; set; }
     }
 }

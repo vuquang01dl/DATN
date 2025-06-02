@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "j+QW7z6jTf5ljmkUnO/pXjuyL4f/rhIcDDGPfEIGPuA=",
+  "Source": "BookingTour.API",
+  "BasePath": "_content/BookingTour.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

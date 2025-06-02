@@ -12,8 +12,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
-using Org.BouncyCastle.Crypto.Generators;
 using BCrypt.Net;
 
 namespace Application.Services
@@ -37,7 +35,8 @@ namespace Application.Services
                 AccountID = Guid.NewGuid(),
                 Email = dto.Email,
                 PasswordHash = hash,
-                Role = dto.Role
+                Role = dto.Role,
+                IsActive = true
             };
             await _repo.AddAsync(account);
         }
@@ -45,8 +44,9 @@ namespace Application.Services
         public async Task<string?> LoginAsync(LoginDTO dto)
         {
             var acc = await _repo.GetByEmailAsync(dto.Email);
-            if (acc == null || !BCrypt.Net.BCrypt.Verify(dto.Password, acc.PasswordHash))
+            if (acc == null || !BCrypt.Net.BCrypt.Verify(dto.Password, acc.PasswordHash) || !acc.IsActive)
                 return null;
+
 
             var claims = new[]
             {
@@ -92,6 +92,20 @@ namespace Application.Services
                 Role = a.Role,
                 IsActive = a.IsActive
             });
+        }
+
+        public async Task ToggleStatusAsync(Guid id)
+        {
+            var acc = await _repo.GetByIdAsync(id);
+            if (acc == null) throw new Exception("Tài khoản không tồn tại");
+
+            acc.IsActive = !acc.IsActive;
+            await _repo.UpdateAsync(acc);
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            await _repo.DeleteAsync(id);
         }
     }
 }

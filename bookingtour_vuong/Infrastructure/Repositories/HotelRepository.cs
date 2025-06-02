@@ -50,5 +50,9 @@ namespace Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+        public async Task<Hotel?> GetByNameAsync(string hotelName)
+        {
+            return await _context.Hotels.FirstOrDefaultAsync(h => h.Name == hotelName);
+        }
     }
 }

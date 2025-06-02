@@ -14,3 +14,19 @@ C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\Application
 C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\Application\obj\Debug\net9.0\refint\Application.dll
 C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\Application\obj\Debug\net9.0\Application.pdb
 C:\Users\V5030587\Downloads\pypj\DATN  Hoang Vuong\bookingtour_vuong\Application\obj\Debug\net9.0\ref\Application.dll
+D:\Cong_viec\DATN\bookingtour_vuong\Application\bin\Debug\net9.0\Application.deps.json
+D:\Cong_viec\DATN\bookingtour_vuong\Application\bin\Debug\net9.0\Application.dll
+D:\Cong_viec\DATN\bookingtour_vuong\Application\bin\Debug\net9.0\Application.pdb
+D:\Cong_viec\DATN\bookingtour_vuong\Application\bin\Debug\net9.0\Domain.dll
+D:\Cong_viec\DATN\bookingtour_vuong\Application\bin\Debug\net9.0\Domain.pdb
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\Application.csproj.AssemblyReference.cache
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\Application.AssemblyInfoInputs.cache
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\Application.AssemblyInfo.cs
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\Application.csproj.CoreCompileInputs.cache
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\Application.sourcelink.json
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\Applicat.44B5EDA2.Up2Date
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\Application.dll
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\refint\Application.dll
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\Application.pdb
+D:\Cong_viec\DATN\bookingtour_vuong\Application\obj\Debug\net9.0\ref\Application.dll

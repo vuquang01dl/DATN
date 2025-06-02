@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-4">
-    <h3>Quản lý tài khoản</h3>
+    <h3>👤 Quản lý tài khoản</h3>
 
     <table class="table table-bordered mt-3">
       <thead class="table-dark">
@@ -12,11 +12,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users" :key="user.id">
+        <tr v-for="user in users" :key="user.accountID">
           <td>{{ user.email }}</td>
           <td>{{ user.role }}</td>
           <td>
-            <span :class="user.isActive ? 'text-success' : 'text-danger'">
+            <span :class="user.isActive ? 'text-success fw-bold' : 'text-danger fw-bold'">
               {{ user.isActive ? 'Hoạt động' : 'Bị khóa' }}
             </span>
           </td>
@@ -31,24 +31,46 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'AccountManagementView',
   data() {
     return {
-      users: [
-        { id: '1', email: 'admin@gmail.com', role: 'admin', isActive: true },
-        { id: '2', email: 'user1@gmail.com', role: 'user', isActive: true },
-        { id: '3', email: 'user2@gmail.com', role: 'user', isActive: false }
-      ]
+      users: []
     }
   },
+  created() {
+    this.fetchUsers()
+  },
   methods: {
-    toggleStatus(user) {
-      user.isActive = !user.isActive
+    async fetchUsers() {
+      try {
+        const res = await axios.get('https://localhost:7046/api/Account')
+        this.users = res.data
+      } catch (err) {
+        console.error(err)
+        alert('Không thể tải danh sách tài khoản')
+      }
     },
-    deleteUser(user) {
+    async toggleStatus(user) {
+      try {
+        await axios.put(`https://localhost:7046/api/Account/${user.accountID}/toggle`)
+        user.isActive = !user.isActive
+      } catch (err) {
+        console.error(err)
+        alert('Lỗi khi cập nhật trạng thái')
+      }
+    },
+    async deleteUser(user) {
       if (confirm(`Bạn có chắc muốn xóa tài khoản ${user.email}?`)) {
-        this.users = this.users.filter(u => u.id !== user.id)
+        try {
+          await axios.delete(`https://localhost:7046/api/Account/${user.accountID}`)
+          this.fetchUsers()
+        } catch (err) {
+          console.error(err)
+          alert('Không thể xóa tài khoản')
+        }
       }
     }
   }

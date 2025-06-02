@@ -9,9 +9,11 @@ namespace Application.Services_Interface
 {
     public interface IAccountService
     {
-        Task<string?> LoginAsync(LoginDTO dto); // Trả JWT token
-        Task RegisterAsync(RegisterDTO dto);
-        Task<AccountDTO?> GetByEmailAsync(string email);
         Task<IEnumerable<AccountDTO>> GetAllAsync();
+        Task<AccountDTO?> GetByEmailAsync(string email);
+        Task RegisterAsync(RegisterDTO dto);
+        Task<string?> LoginAsync(LoginDTO dto);
+        Task ToggleStatusAsync(Guid id);
+        Task DeleteAsync(Guid id);
     }
 }

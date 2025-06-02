@@ -15,5 +15,7 @@ namespace Domain.Repositories
         Task AddAsync(Hotel hotel);
         Task UpdateAsync(Hotel hotel);
         Task DeleteAsync(Guid id);
+        Task<Hotel?> GetByNameAsync(string hotelName);
+
     }
 }

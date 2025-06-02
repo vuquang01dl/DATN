@@ -15,7 +15,7 @@ namespace Application.Services_Interface
 
         Task AddTourAsync(TourDTO dto);
         Task UpdateTourAsync(TourDTO dto);
-        Task DeleteTourAsync(int id);
+        Task DeleteTourAsync(Guid id);
         Task UpdateStatusAsync(Guid id, TourStatus newStatus);
         Task<IEnumerable<TourStatusDTO>> GetAllTourStatusesAsync();
 

@@ -54,7 +54,8 @@ namespace BookingTour.API.Controllers
 
         // DELETE: api/tour/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+       
+        public async Task<IActionResult> Delete(Guid id) // ✅ Đổi từ int → Guid
         {
             await _service.DeleteTourAsync(id);
             return Ok(new { message = "Tour deleted successfully." });

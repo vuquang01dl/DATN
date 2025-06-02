@@ -15,6 +15,7 @@ namespace BookingTour.API.Controllers
             _service = service;
         }
 
+        // ✅ Lấy toàn bộ khách hàng
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -22,6 +23,7 @@ namespace BookingTour.API.Controllers
             return Ok(list);
         }
 
+        // ✅ Lấy theo ID
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -29,26 +31,40 @@ namespace BookingTour.API.Controllers
             return item == null ? NotFound() : Ok(item);
         }
 
+        // ✅ Thêm khách hàng mới - SỬA TẠI ĐÂY
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CustomerDTO dto)
+        public async Task<IActionResult> Create([FromBody] CustomerDTO dto) // ✅ Bắt buộc có [FromBody]
         {
+            if (dto == null)
+                return BadRequest(new { message = "Dữ liệu không hợp lệ." });
+
             await _service.AddAsync(dto);
             return Ok(new { message = "Created" });
         }
 
+        // ✅ Cập nhật khách hàng
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] CustomerDTO dto)
         {
-            if (id != dto.CustomerID) return BadRequest();
+            if (id != dto.CustomerID)
+                return BadRequest(new { message = "ID không khớp." });
+
             await _service.UpdateAsync(dto);
             return Ok(new { message = "Updated" });
         }
 
+        // ✅ Xoá khách hàng
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             await _service.DeleteAsync(id);
             return Ok(new { message = "Deleted" });
+        }
+        [HttpGet("by-email/{email}")]
+        public async Task<IActionResult> GetByEmail(string email)
+        {
+            var item = await _service.GetByEmailAsync(email);
+            return item == null ? NotFound() : Ok(item);
         }
     }
 }

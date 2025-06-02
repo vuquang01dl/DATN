@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 using Application.DTOs;
 using Application.Services_Interface;
 using Domain.Entities;
@@ -25,10 +23,10 @@ namespace Application.Services
             var list = await _repo.GetAllAsync();
             return list.Select(b => new BookingDTO
             {
-                BookingID = b.BookingID,
-                TourID = b.TourID,
-                CustomerID = b.CustomerID,
-                PaymentID = b.PaymentID,
+                BookingId = b.BookingId,
+                TourId = b.TourId,
+                CustomerId = b.CustomerId,
+                PaymentId = b.PaymentId,
                 Adult = b.Adult,
                 Child = b.Child,
                 TotalPrice = b.TotalPrice,
@@ -41,12 +39,13 @@ namespace Application.Services
         {
             var b = await _repo.GetByIdAsync(id);
             if (b == null) return null;
+
             return new BookingDTO
             {
-                BookingID = b.BookingID,
-                TourID = b.TourID,
-                CustomerID = b.CustomerID,
-                PaymentID = b.PaymentID,
+                BookingId = b.BookingId,
+                TourId = b.TourId,
+                CustomerId = b.CustomerId,
+                PaymentId = b.PaymentId,
                 Adult = b.Adult,
                 Child = b.Child,
                 TotalPrice = b.TotalPrice,
@@ -57,18 +56,24 @@ namespace Application.Services
 
         public async Task AddAsync(BookingDTO dto)
         {
+            // Kiểm tra trước nếu cần
+            if (dto.BookingId == Guid.Empty) dto.BookingId = Guid.NewGuid();
+
+            // Tạo Booking entity
             var entity = new Booking
             {
-                BookingID = Guid.NewGuid(),
-                TourID = dto.TourID,
-                CustomerID = dto.CustomerID,
-                PaymentID = dto.PaymentID,
+                BookingId = dto.BookingId,
+                TourId = dto.TourId,
+                CustomerId = dto.CustomerId,
+                PaymentId = dto.PaymentId, // đảm bảo Payment này đã tồn tại trước đó
                 Adult = dto.Adult,
                 Child = dto.Child,
                 TotalPrice = dto.TotalPrice,
-                CreateAt = DateTime.Now,
-                ModifyAt = DateTime.Now
+                CreateAt = dto.CreateAt,
+                ModifyAt = dto.ModifyAt
             };
+
+            // Lưu booking
             await _repo.AddAsync(entity);
         }
 
@@ -76,15 +81,15 @@ namespace Application.Services
         {
             var entity = new Booking
             {
-                BookingID = dto.BookingID,
-                TourID = dto.TourID,
-                CustomerID = dto.CustomerID,
-                PaymentID = dto.PaymentID,
+                BookingId = dto.BookingId,
+                TourId = dto.TourId,
+                CustomerId = dto.CustomerId,
+                PaymentId = dto.PaymentId,
                 Adult = dto.Adult,
                 Child = dto.Child,
                 TotalPrice = dto.TotalPrice,
                 CreateAt = dto.CreateAt,
-                ModifyAt = DateTime.Now
+                ModifyAt = DateTime.UtcNow
             };
             await _repo.UpdateAsync(entity);
         }

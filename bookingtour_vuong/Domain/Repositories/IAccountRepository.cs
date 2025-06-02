@@ -12,5 +12,8 @@ namespace Domain.Repositories
         Task AddAsync(Account account);
         Task<Account?> GetByEmailAsync(string email);
         Task<IEnumerable<Account>> GetAllAsync();
+        Task<Account?> GetByIdAsync(Guid id);           // ✅ cần cho ToggleStatus & Delete
+        Task UpdateAsync(Account acc);                  // ✅ cần cho ToggleStatus
+        Task DeleteAsync(Guid id);                      // ✅ cần cho Delete
     }
 }

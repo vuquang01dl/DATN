@@ -42,12 +42,32 @@ namespace BookingTour.API.Controllers
             return acc == null ? NotFound() : Ok(acc);
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var list = await _service.GetAllAsync();
             return Ok(list);
         }
+        [HttpPut("{id}/toggle")]
+        public async Task<IActionResult> ToggleStatus(Guid id)
+        {
+            await _service.ToggleStatusAsync(id);
+            return Ok(new { message = "Updated" });
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _service.DeleteAsync(id);
+            return Ok(new { message = "Deleted" });
+        }
+        [HttpGet("email")]
+        public async Task<IActionResult> GetByEmailQuery([FromQuery] string email)
+        {
+            var acc = await _service.GetByEmailAsync(email);
+            return acc == null ? NotFound() : Ok(acc);
+        }
+
+
     }
 }

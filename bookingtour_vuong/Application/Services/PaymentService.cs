@@ -50,14 +50,16 @@ namespace Application.Services
         {
             var entity = new Payment
             {
-                PaymentID = Guid.NewGuid(),
+                PaymentID = dto.PaymentID,
                 Method = dto.Method,
                 Amount = dto.Amount,
                 Date = dto.Date,
-                BookingID = dto.BookingID
+                BookingID = dto.BookingID,
+                CustomerID = dto.CustomerID    // ✅ không được thiếu dòng này
             };
             await _repo.AddAsync(entity);
         }
+
 
         public async Task UpdateAsync(PaymentDTO dto)
         {

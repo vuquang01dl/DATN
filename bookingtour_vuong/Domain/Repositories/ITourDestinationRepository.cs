@@ -10,8 +10,10 @@ namespace Domain.Repositories
     public interface ITourDestinationRepository
     {
         Task<IEnumerable<TourDestination>> GetAllAsync();
-        Task<TourDestination?> GetByKeysAsync(Guid tourId, Guid destinationId);
-        Task AddAsync(TourDestination entity);
-        Task DeleteAsync(Guid tourId, Guid destinationId);
+        Task<TourDestination?> GetByNamesAsync(string tourName, string destinationName);
+        Task AddAsync(string tourName, string destinationName);
+        Task DeleteAsync(string tourName, string destinationName);
+       
     }
+
 }

@@ -1,7 +1,10 @@
-﻿namespace Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Domain.Entities
 {
     public class Employee
     {
+        [Key]
         public Guid EmployeeID { get; set; }
         public string? Image { get; set; }
         public string FirstName { get; set; }

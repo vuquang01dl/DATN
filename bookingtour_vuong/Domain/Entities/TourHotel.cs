@@ -1,17 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.Entities
 {
     public class TourHotel
     {
-        public Guid TourID { get; set; }
-        public Guid HotelID { get; set; }
+        [Key, Column(Order = 0)]
+        public Guid TourId { get; set; }
 
-        // Navigation (tuỳ bạn dùng hay không)
-        public Tour? Tour { get; set; }
-        public Hotel? Hotel { get; set; }
+        [Key, Column(Order = 1)]
+        public Guid HotelId { get; set; }
+
+        [ForeignKey(nameof(TourId))]
+        public virtual Tour Tour { get; set; }
+
+        [ForeignKey(nameof(HotelId))]
+        public virtual Hotel Hotel { get; set; }
     }
 }

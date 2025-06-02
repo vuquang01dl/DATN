@@ -14,6 +14,7 @@ namespace Domain.Repositories
 
         Task AddAsync(Tour tour);
         Task UpdateAsync(Tour tour);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(Guid id);
+        Task<Tour?> GetByNameAsync(string tourName);
     }
 }

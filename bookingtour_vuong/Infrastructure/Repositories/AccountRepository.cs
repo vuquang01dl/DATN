@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Domain.Entities;
+﻿using Domain.Entities;
 using Domain.Repositories;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
@@ -20,10 +17,9 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task AddAsync(Account account)
+        public async Task<IEnumerable<Account>> GetAllAsync()
         {
-            _context.Accounts.Add(account);
-            await _context.SaveChangesAsync();
+            return await _context.Accounts.ToListAsync();
         }
 
         public async Task<Account?> GetByEmailAsync(string email)
@@ -31,9 +27,31 @@ namespace Infrastructure.Repositories
             return await _context.Accounts.FirstOrDefaultAsync(a => a.Email == email);
         }
 
-        public async Task<IEnumerable<Account>> GetAllAsync()
+        public async Task<Account?> GetByIdAsync(Guid id)
         {
-            return await _context.Accounts.ToListAsync();
+            return await _context.Accounts.FirstOrDefaultAsync(a => a.AccountID == id);
+        }
+
+        public async Task AddAsync(Account acc)
+        {
+            await _context.Accounts.AddAsync(acc);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(Account acc)
+        {
+            _context.Accounts.Update(acc);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var acc = await _context.Accounts.FindAsync(id);
+            if (acc != null)
+            {
+                _context.Accounts.Remove(acc);
+                await _context.SaveChangesAsync();
+            }
         }
     }
 }

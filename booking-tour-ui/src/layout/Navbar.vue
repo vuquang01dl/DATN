@@ -17,7 +17,7 @@
           </li>
 
           <!-- Quản lý -->
-          <li class="nav-item dropdown" v-if="user?.role === 'Admin'">
+          <li class="nav-item dropdown" v-if="user?.role === 'admin'">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Quản lý (Admin)</a>
             <ul class="dropdown-menu">
               <li><router-link to="/admin/tours" class="dropdown-item">Quản lý tour</router-link></li>

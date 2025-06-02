@@ -1,7 +1,10 @@
-﻿namespace Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Domain.Entities
 {
     public class Account
     {
+        [Key]
         public Guid AccountID { get; set; }
         public string Email { get; set; } = "";
         public string PasswordHash { get; set; } = "";

@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'RegisterView',
   data() {
@@ -41,24 +43,19 @@ export default {
     }
   },
   methods: {
-    register() {
+    async register() {
       if (!this.form.email || !this.form.password || !this.form.role) {
         alert('Vui lòng nhập đầy đủ thông tin!');
         return;
       }
 
-      // ✅ Dữ liệu giả để kiểm thử
-      console.log('Đã gửi thông tin đăng ký:', this.form);
-
-      // ❗️Khi backend sẵn sàng thì bật đoạn axios sau:
-      /*
-      axios.post('http://localhost:5017/api/account/register', this.form)
-        .then(() => this.success = true)
-        .catch(err => alert('Lỗi: ' + err));
-      */
-
-      // ✅ Hiển thị thành công luôn khi chưa có backend
-      this.success = true;
+      try {
+        await axios.post('https://localhost:7046/api/account/register', this.form);
+        this.success = true;
+      } catch (error) {
+        console.error(error);
+        alert('❌ Đăng ký thất bại: ' + (error.response?.data?.message || error.message));
+      }
     }
   }
 }

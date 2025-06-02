@@ -1,24 +1,39 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Domain.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace Domain.Entities
+public class Booking
 {
-    public class Booking
-    {
+    [Key]
+    public Guid BookingId { get; set; }
 
-        public Guid BookingID { get; set; }
-        public Guid TourID { get; set; }
-        public Guid CustomerID { get; set; }
-        public Guid? PaymentID { get; set; }
-        public int Adult { get; set; }
-        public int Child { get; set; }
-        public decimal TotalPrice { get; set; }
-        public DateTime CreateAt { get; set; }
-        public DateTime ModifyAt { get; set; }
+    // Foreign key đến Tour
+    public Guid TourId { get; set; }
 
-        public virtual Customer Customer { get; set; }
-        public virtual Tour Tour { get; set; }
-        public virtual Payment Payment { get; set; }
-        
+    [ForeignKey(nameof(TourId))]
+    public Tour Tour { get; set; }
 
-    }
+    // Foreign key đến Customer
+    public Guid CustomerId { get; set; }
+
+    [ForeignKey(nameof(CustomerId))]
+    public Customer Customer { get; set; }
+
+    // Foreign key đến Payment
+    public Guid? PaymentId { get; set; }
+
+    [ForeignKey(nameof(PaymentId))]
+    public Payment? Payment { get; set; }
+
+    // Tổng tiền
+    [Column(TypeName = "decimal(18,2)")]
+    public decimal TotalPrice { get; set; }
+
+    public int Adult { get; set; }
+    public int Child { get; set; }
+
+    public DateTime CreateAt { get; set; } = DateTime.UtcNow;
+    public DateTime? ModifyAt { get; set; }
+
+    public string? Note { get; set; }
 }

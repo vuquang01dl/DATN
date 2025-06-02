@@ -39,7 +39,7 @@ namespace BookingTour.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] BookingDTO dto)
         {
-            if (id != dto.BookingID) return BadRequest();
+            if (id != dto.BookingId) return BadRequest();  // ✅ đúng tên thuộc tính
             await _service.UpdateAsync(dto);
             return Ok(new { message = "Updated" });
         }

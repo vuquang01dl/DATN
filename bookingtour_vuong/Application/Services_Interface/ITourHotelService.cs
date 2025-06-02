@@ -11,8 +11,9 @@ namespace Application.Services_Interface
     public interface ITourHotelService
     {
         Task<IEnumerable<TourHotelDTO>> GetAllAsync();
-        Task<TourHotelDTO?> GetByKeysAsync(Guid tourId, Guid hotelId);
+        Task<TourHotelDTO?> GetByNamesAsync(string tourName, string hotelName);
         Task AddAsync(TourHotelDTO dto);
-        Task DeleteAsync(Guid tourId, Guid hotelId);
+        Task DeleteAsync(string tourName, string hotelName);
     }
+
 }

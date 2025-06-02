@@ -14,5 +14,6 @@ namespace Application.Services_Interface
         Task AddAsync(CustomerDTO dto);
         Task UpdateAsync(CustomerDTO dto);
         Task DeleteAsync(Guid id);
+        Task<CustomerDTO?> GetByEmailAsync(string email);
     }
 }

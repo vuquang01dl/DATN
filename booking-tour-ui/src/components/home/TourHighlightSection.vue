@@ -4,11 +4,16 @@
     <div class="container">
       <div class="row justify-content-center">
         <div
-          class="col-lg-4 col-md-6 mb-4"
+          class="col-lg-6 col-md-6 mb-4"
           v-for="tour in tours"
           :key="tour.id"
         >
           <div class="tour-card card h-100 shadow-sm animate__animated animate__fadeInUp">
+            <img
+              :src="tour.image || require('@/assets/caurong.jpg')"
+              class="tour-image mb-3"
+              alt="Ảnh tour"
+            />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title fw-bold mb-3">{{ tour.name }}</h5>
               <p class="card-text flex-grow-1">{{ tour.description }}</p>
@@ -31,16 +36,9 @@
 </template>
 
 <script>
-// import axios from 'axios'
 export default {
   name: 'TourHighlightSection',
-  props: ['tours'],
-  /*
-  async mounted() {
-    const res = await axios.get('http://localhost:5017/api/tour')
-    this.tours = res.data
-  }
-  */
+  props: ['tours']
 }
 </script>
 
@@ -66,11 +64,18 @@ export default {
   box-shadow: 0 4px 20px #bdbdbd2a;
   position: relative;
   overflow: hidden;
+  padding-top: 8px;
 }
 .tour-card:hover {
   transform: translateY(-12px) scale(1.03);
   box-shadow: 0 12px 32px #00bcd44a;
   z-index: 2;
+}
+.tour-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 1.3rem 1.3rem 0 0;
 }
 .card-title {
   color: #c57d1c;
@@ -103,8 +108,8 @@ export default {
   color: #fff;
   transform: scale(1.08);
 }
-@media (max-width: 768px) {
-  .col-lg-4, .col-md-6 {
+@media (max-width: 992px) {
+  .col-lg-6, .col-md-6 {
     max-width: 100%;
     flex: 0 0 100%;
   }

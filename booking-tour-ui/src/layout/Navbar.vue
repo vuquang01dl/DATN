@@ -1,115 +1,264 @@
 <template>
-  <nav class="navbar navbar-expand-lg custom-navbar shadow-sm">
-    <div class="container">
-      <router-link to="/" class="navbar-brand fw-bold text-primary">Booking Tour</router-link>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <router-link to="/" class="nav-link" exact-active-class="active-link">Trang chủ</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/bookingform" class="nav-link" exact-active-class="active-link">Đặt tour</router-link>
-          </li>
-
-          <!-- Quản lý -->
-          <li class="nav-item dropdown" v-if="user?.role === 'admin'">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Quản lý (Admin)</a>
-            <ul class="dropdown-menu">
-              <li><router-link to="/admin/tours" class="dropdown-item">Quản lý tour</router-link></li>
-              <li><router-link to="/admin/accounts" class="dropdown-item">Quản lý tài khoản</router-link></li>
-              <li><router-link to="/admin/bookings" class="dropdown-item">Quản lý đặt tour</router-link></li>
-              <li><router-link to="/tourstatus" class="dropdown-item">Trạng thái tour</router-link></li>
-              <li><router-link to="/admin/assign" class="dropdown-item">Phân công nhân viên</router-link></li>
-              <li><router-link to="/admin/destinations" class="dropdown-item">Quản lý địa điểm</router-link></li>
-              <li><router-link to="/admin/hotels" class="dropdown-item">Quản lý khách sạn</router-link></li>
-              <li><router-link to="/admin/customers" class="dropdown-item">Quản lý khách hàng</router-link></li>
-              <li><router-link to="/admin/permissions" class="dropdown-item">Quản lý quyền</router-link></li>
-              <li><router-link to="/admin/roles" class="dropdown-item">Quản lý vai trò</router-link></li>
-              <li><router-link to="/admin/tour-destinations" class="dropdown-item">Quản lý Tour - Điểm đến</router-link></li>
-              <li><router-link to="/admin/tour-hotels" class="dropdown-item">Quản lý Tour - Khách sạn</router-link></li>
-
-            </ul>
-          </li>
-
-          <!-- User -->
-          <li class="nav-item dropdown" v-if="user">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">{{ user.username }}</a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><router-link to="/my-bookings" class="dropdown-item">Lịch sử đặt tour</router-link></li>
-              <li><router-link to="/feedback" class="dropdown-item">Gửi phản hồi</router-link></li>
-              <li><router-link to="/invoice/123456" class="dropdown-item">Thanh toán hóa đơn</router-link></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a href="#" class="dropdown-item" @click.prevent="logout">Đăng xuất</a></li>
-            </ul>
-          </li>
-
-
-          <!-- Guest -->
-          <li class="nav-item" v-else>
-            <router-link to="/login" class="nav-link" exact-active-class="active-link">Đăng nhập</router-link>
-          </li>
-          <li class="nav-item" v-if="!user">
-            <router-link to="/register" class="nav-link" exact-active-class="active-link">Đăng ký</router-link>
-          </li>
-        </ul>
+  <div class="sidebar-layout">
+    <!-- SIDEBAR -->
+    <nav class="sidebar shadow">
+      <div class="sidebar-header">
+        <router-link to="/" class="brand">
+          <i class="fa-solid fa-earth-asia me-2"></i>
+          Booking Tour
+        </router-link>
       </div>
+      <ul class="sidebar-nav">
+
+        <!-- Employee chỉ hiện trạng thái tour -->
+        <template v-if="user && user.role === 'employee'">
+          <li>
+            <router-link to="/tourstatus" class="sidebar-link" exact-active-class="active">
+              <i class="fa-solid fa-flag-checkered me-2"></i>
+              Quản lý trạng thái tour
+            </router-link>
+          </li>
+          <!-- Dropdown tài khoản -->
+          <li class="sidebar-dropdown" :class="{open: openDropdown === 'user'}">
+            <div class="sidebar-link sidebar-dropdown-toggle" @click="toggleDropdown('user')">
+              <i class="fa-solid fa-user-circle me-2"></i> {{ user.username }}
+              <i class="fa-solid" :class="openDropdown === 'user' ? 'fa-chevron-up' : 'fa-chevron-down'" style="float:right;"></i>
+            </div>
+            <ul class="sidebar-dropdown-list custom-dropdown" v-show="openDropdown === 'user'">
+              <li>
+                <a href="#" class="sidebar-link" @click.prevent="logout">
+                  <i class="fa-solid fa-sign-out-alt me-2"></i>Đăng xuất
+                </a>
+              </li>
+            </ul>
+          </li>
+        </template>
+
+        <!-- Admin đầy đủ menu -->
+        <template v-else-if="user && user.role === 'admin'">
+          <li>
+            <router-link to="/" class="sidebar-link" exact-active-class="active">
+              <i class="fa-solid fa-house me-2"></i> Trang chủ
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/bookingform" class="sidebar-link" exact-active-class="active">
+              <i class="fa-solid fa-calendar-plus me-2"></i> Đặt tour
+            </router-link>
+          </li>
+          <li class="sidebar-dropdown" :class="{open: openDropdown === 'admin'}">
+            <div class="sidebar-link sidebar-dropdown-toggle" @click="toggleDropdown('admin')">
+              <i class="fa-solid fa-gears me-2"></i> Quản lý (Admin)
+              <i class="fa-solid" :class="openDropdown === 'admin' ? 'fa-chevron-up' : 'fa-chevron-down'" style="float:right;"></i>
+            </div>
+            <ul class="sidebar-dropdown-list custom-dropdown" v-show="openDropdown === 'admin'">
+              <li><router-link to="/admin/tours" class="sidebar-link"><i class="fa-solid fa-map me-2"></i>Quản lý tour</router-link></li>
+              <li><router-link to="/admin/accounts" class="sidebar-link"><i class="fa-solid fa-users me-2"></i>Quản lý tài khoản</router-link></li>
+              <li><router-link to="/admin/bookings" class="sidebar-link"><i class="fa-solid fa-clipboard-list me-2"></i>Quản lý đặt tour</router-link></li>
+              <li><router-link to="/tourstatus" class="sidebar-link"><i class="fa-solid fa-flag-checkered me-2"></i>Trạng thái tour</router-link></li>
+              <li><router-link to="/admin/assign" class="sidebar-link"><i class="fa-solid fa-user-tie me-2"></i>Phân công nhân viên</router-link></li>
+              <li><router-link to="/admin/destinations" class="sidebar-link"><i class="fa-solid fa-location-dot me-2"></i>Quản lý địa điểm</router-link></li>
+              <li><router-link to="/admin/hotels" class="sidebar-link"><i class="fa-solid fa-hotel me-2"></i>Quản lý khách sạn</router-link></li>
+              <li><router-link to="/admin/customers" class="sidebar-link"><i class="fa-solid fa-user-friends me-2"></i>Quản lý khách hàng</router-link></li>
+              <li><router-link to="/admin/permissions" class="sidebar-link"><i class="fa-solid fa-key me-2"></i>Quản lý quyền</router-link></li>
+              <li><router-link to="/admin/roles" class="sidebar-link"><i class="fa-solid fa-user-tag me-2"></i>Quản lý vai trò</router-link></li>
+              <li><router-link to="/admin/tour-destinations" class="sidebar-link"><i class="fa-solid fa-route me-2"></i>Tour - Điểm đến</router-link></li>
+              <li><router-link to="/admin/tour-hotels" class="sidebar-link"><i class="fa-solid fa-hotel me-2"></i>Tour - Khách sạn</router-link></li>
+            </ul>
+          </li>
+          <!-- Dropdown tài khoản -->
+          <li class="sidebar-dropdown" :class="{open: openDropdown === 'user'}">
+            <div class="sidebar-link sidebar-dropdown-toggle" @click="toggleDropdown('user')">
+              <i class="fa-solid fa-user-circle me-2"></i> {{ user.username }}
+              <i class="fa-solid" :class="openDropdown === 'user' ? 'fa-chevron-up' : 'fa-chevron-down'" style="float:right;"></i>
+            </div>
+            <ul class="sidebar-dropdown-list custom-dropdown" v-show="openDropdown === 'user'">
+              <li><router-link to="/my-bookings" class="sidebar-link"><i class="fa-solid fa-clock-rotate-left me-2"></i>Lịch sử đặt tour</router-link></li>
+              <li><router-link to="/feedback" class="sidebar-link"><i class="fa-solid fa-comment-dots me-2"></i>Gửi phản hồi</router-link></li>
+              <li><router-link to="/invoice/123456" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar me-2"></i>Thanh toán hóa đơn</router-link></li>
+              <li><a href="#" class="sidebar-link" @click.prevent="logout"><i class="fa-solid fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
+            </ul>
+          </li>
+        </template>
+
+        <!-- User thường -->
+        <template v-else-if="user">
+          <li>
+            <router-link to="/" class="sidebar-link" exact-active-class="active">
+              <i class="fa-solid fa-house me-2"></i> Trang chủ
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/bookingform" class="sidebar-link" exact-active-class="active">
+              <i class="fa-solid fa-calendar-plus me-2"></i> Đặt tour
+            </router-link>
+          </li>
+          <!-- Dropdown tài khoản -->
+          <li class="sidebar-dropdown" :class="{open: openDropdown === 'user'}">
+            <div class="sidebar-link sidebar-dropdown-toggle" @click="toggleDropdown('user')">
+              <i class="fa-solid fa-user-circle me-2"></i> {{ user.username }}
+              <i class="fa-solid" :class="openDropdown === 'user' ? 'fa-chevron-up' : 'fa-chevron-down'" style="float:right;"></i>
+            </div>
+            <ul class="sidebar-dropdown-list custom-dropdown" v-show="openDropdown === 'user'">
+              <li><router-link to="/my-bookings" class="sidebar-link"><i class="fa-solid fa-clock-rotate-left me-2"></i>Lịch sử đặt tour</router-link></li>
+              <li><router-link to="/feedback" class="sidebar-link"><i class="fa-solid fa-comment-dots me-2"></i>Gửi phản hồi</router-link></li>
+              <li><router-link to="/invoice/123456" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar me-2"></i>Thanh toán hóa đơn</router-link></li>
+              <li><a href="#" class="sidebar-link" @click.prevent="logout"><i class="fa-solid fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
+            </ul>
+          </li>
+        </template>
+
+        <!-- Guest -->
+        <template v-else>
+          <li>
+            <router-link to="/login" class="sidebar-link" exact-active-class="active"><i class="fa-solid fa-sign-in-alt me-2"></i> Đăng nhập</router-link>
+          </li>
+          <li>
+            <router-link to="/register" class="sidebar-link" exact-active-class="active"><i class="fa-solid fa-user-plus me-2"></i> Đăng ký</router-link>
+          </li>
+        </template>
+      </ul>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <slot />
     </div>
-  </nav>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'MainNavbar',
+  name: "SidebarNavbar",
   data() {
     return {
-      user: null
-    }
+      user: null,
+      openDropdown: null
+    };
   },
   mounted() {
-    const userData = localStorage.getItem("user")
-    if (userData) this.user = JSON.parse(userData)
+    const userData = localStorage.getItem("user");
+    if (userData) this.user = JSON.parse(userData);
   },
   methods: {
     logout() {
-      localStorage.removeItem("user")
-      this.$router.push("/login")
-      location.reload()
+      localStorage.removeItem("user");
+      this.$router.push("/login");
+      location.reload();
+    },
+    toggleDropdown(name) {
+      this.openDropdown = this.openDropdown === name ? null : name;
     }
   }
-}
+};
 </script>
 
 <style scoped>
-.custom-navbar {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e2e2e2;
+.sidebar-layout {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: 265px;
+  background: #202245;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-shadow: 2px 0 10px #0002;
+  padding-top: 20px;
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  z-index: 1000;
+}
+.sidebar-header {
+  padding: 0 24px 20px 24px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #33d3ff;
+  margin-bottom: 8px;
+}
+.brand {
+  color: #33d3ff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #bfc8e2;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-left: 3px solid transparent;
+  font-size: 1rem;
+  transition: background 0.15s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+.sidebar-link.active,
+.sidebar-link.router-link-exact-active,
+.sidebar-link:hover {
+  background: #262a4d;
+  color: #33d3ff !important;
+  border-left: 3px solid #33d3ff;
+}
+.sidebar-dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+.sidebar-dropdown-list {
+  margin-left: 0;
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+}
+.sidebar-dropdown .fa-chevron-down,
+.sidebar-dropdown .fa-chevron-up {
+  margin-left: auto;
+  font-size: 0.9em;
+}
+.main-content {
+  flex: 1;
+  margin-left: 265px;
+  background: #f4f7fc;
+  padding: 0 40px;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-.navbar .nav-link {
-  color: #333;
-  padding: 8px 14px;
-  transition: all 0.2s ease-in-out;
-  position: relative;
+/* --- MÀU DROPDOWN KHÁC BIỆT, DỄ NHÌN --- */
+.custom-dropdown {
+  background: #e2fbff !important; /* Xanh nhạt khác biệt */
+  border-left: 3px solid #33d3ff;
+}
+.custom-dropdown .sidebar-link {
+  color: #085e85 !important;
+}
+.custom-dropdown .sidebar-link:hover {
+  background: #b8f1fa !important;
+  color: #174f63 !important;
 }
 
-.navbar .nav-link:hover {
-  color: #0d6efd;
-  text-decoration: underline;
+/* Thêm hiệu ứng đóng mở dropdown */
+.sidebar-dropdown-list {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.25s, opacity 0.18s;
 }
-
-.navbar .nav-link.active-link {
-  color: #0d6efd;
-  font-weight: 600;
-  text-decoration: underline;
+.sidebar-dropdown.open .sidebar-dropdown-list {
+  max-height: 1000px;
+  opacity: 1;
+  pointer-events: auto;
+  transition: max-height 0.45s, opacity 0.22s;
 }
-
-.dropdown-menu {
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
-  border-radius: 8px;
+.sidebar-dropdown-list .sidebar-link {
+  padding-left: 48px;
+  font-size: 0.96rem;
 }
 </style>

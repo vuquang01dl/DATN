@@ -61,59 +61,69 @@ data() {
         id: '1',
         name: 'Tour Đà Lạt 3N2Đ',
         description: 'Khám phá xứ sở ngàn hoa',
-        price: 2500000
+        price: 2500000,
+        image: require('@/assets/dalat.jpg')
       },
       {
         id: '2',
         name: 'Tour Phú Quốc 4N3Đ',
         description: 'Biển xanh - cát trắng - nắng vàng',
-        price: 3500000
+        price: 3500000,
+        image: require('@/assets/phuquoc.jpg')
       },
       {
         id: '3',
         name: 'Tour Đà Nẵng - Bà Nà Hills 3N2Đ',
         description: 'Trải nghiệm thành phố đáng sống, tham quan Bà Nà Hills',
-        price: 2800000
+        price: 2800000,
+        image: require('@/assets/danang.jpg')
       },
       {
         id: '4',
         name: 'Tour Nha Trang 4N3Đ',
         description: 'Tận hưởng biển xanh, đảo ngọc và đặc sản miền Trung',
-        price: 3200000
+        price: 3200000,
+        image: require('@/assets/nhatrang.jpg')
       },
       {
         id: '5',
         name: 'Tour Sapa - Fansipan 3N2Đ',
         description: 'Chinh phục nóc nhà Đông Dương, ngắm ruộng bậc thang',
-        price: 2950000
+        price: 2950000,
+        image: require('@/assets/sapa.jpg')
       },
       {
         id: '6',
         name: 'Tour Hà Nội - Hạ Long - Ninh Bình 5N4Đ',
         description: 'Khám phá thủ đô ngàn năm văn hiến, vịnh Hạ Long kỳ quan thế giới',
-        price: 4200000
+        price: 4200000,
+        image: require('@/assets/halong.jpg')
       },
       {
         id: '7',
         name: 'Tour Huế - Đà Nẵng - Hội An 4N3Đ',
         description: 'Di sản miền Trung: Cố đô Huế, phố cổ Hội An, biển Đà Nẵng',
-        price: 3350000
+        price: 3350000,
+        image: require('@/assets/hue.jpg')
       },
       {
         id: '8',
         name: 'Tour Côn Đảo 3N2Đ',
         description: 'Khám phá hòn đảo huyền thoại, biển xanh hoang sơ, lịch sử thiêng liêng',
-        price: 3900000
+        price: 3900000,
+        image: require('@/assets/condao.jpg')
       },
       {
         id: '9',
         name: 'Tour Miền Tây Sông Nước 3N2Đ',
         description: 'Trải nghiệm chợ nổi, miệt vườn, văn hóa sông nước Nam Bộ',
-        price: 2700000
+        price: 2700000,
+        image: require('@/assets/mientay.jpg')
       },
     ]
   }
 }
+
 
 }
 </script>

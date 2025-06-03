@@ -4,7 +4,8 @@
       <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path
           d="M0,64L40,69.3C80,75,160,85,240,80C320,75,400,53,480,58.7C560,64,640,96,720,101.3C800,107,880,85,960,74.7C1040,64,1120,64,1200,58.7V120H0V64Z"
-          fill="#8fe3ff" fill-opacity="1">
+          fill="#8fe3ff"
+          fill-opacity="1">
           <animate attributeName="d" dur="8s" repeatCount="indefinite"
             values="M0,64L40,69.3C80,75,160,85,240,80C320,75,400,53,480,58.7C560,64,640,96,720,101.3C800,107,880,85,960,74.7C1040,64,1120,64,1200,58.7V120H0V64Z;
                     M0,74L40,74C80,74,160,90,240,100C320,110,400,105,480,96C560,87,640,65,720,63C800,61,880,83,960,98C1040,113,1120,109,1200,100V120H0V74Z;
@@ -18,6 +19,7 @@
           <i class="bi bi-umbrella-fill"></i> Đặt Tour Nghỉ Dưỡng
         </h2>
         <form @submit.prevent="submitBooking" autocomplete="off">
+          <!-- Email -->
           <div class="form-group mb-3">
             <label class="form-label">Email khách hàng</label>
             <input v-model.trim="email"
@@ -26,6 +28,28 @@
               required
               placeholder="Nhập email khách hàng (đã đăng ký)" />
           </div>
+
+          <!-- Số điện thoại -->
+          <div class="form-group mb-3">
+            <label class="form-label">Số điện thoại</label>
+            <input v-model.trim="phone"
+              type="tel"
+              class="form-control input-effect"
+              required
+              placeholder="Nhập số điện thoại khách hàng" />
+          </div>
+
+          <!-- Địa chỉ -->
+          <div class="form-group mb-3">
+            <label class="form-label">Địa chỉ</label>
+            <input v-model.trim="address"
+              type="text"
+              class="form-control input-effect"
+              required
+              placeholder="Nhập địa chỉ khách hàng" />
+          </div>
+
+          <!-- Chọn tour -->
           <div class="form-group mb-3">
             <label class="form-label">Chọn tour</label>
             <select v-model="form.tourName" class="form-select input-effect" required @change="filterHotelsByTour">
@@ -35,6 +59,8 @@
               </option>
             </select>
           </div>
+
+          <!-- Chọn khách sạn -->
           <div class="form-group mb-3">
             <label class="form-label">Chọn khách sạn</label>
             <select v-model="form.hotelName" class="form-select input-effect" required>
@@ -77,16 +103,31 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   name: 'BookingFormView',
   data() {
     return {
       email: "",
-      tours: [],
-      hotels: [],
-      tourHotels: [],
+      phone: "",      // Thêm
+      address: "",    // Thêm
+      tours: [
+        // Dữ liệu mẫu demo, bạn thay bằng dữ liệu thật khi có API
+        { id: '1', name: 'Tour Đà Lạt 3N2Đ', location: 'Đà Lạt', price: 2500000 },
+        { id: '2', name: 'Tour Phú Quốc 4N3Đ', location: 'Phú Quốc', price: 3500000 },
+        { id: '3', name: 'Tour Đà Nẵng - Bà Nà Hills 3N2Đ', location: 'Đà Nẵng', price: 2800000 }
+      ],
+      hotels: [
+        // Dữ liệu mẫu demo
+        { hotelID: 'A1', name: 'Khách sạn Đà Lạt Palace', city: 'Đà Lạt' },
+        { hotelID: 'A2', name: 'Resort Phú Quốc Luxury', city: 'Phú Quốc' },
+        { hotelID: 'A3', name: 'Bà Nà Hills Resort', city: 'Đà Nẵng' }
+      ],
+      tourHotels: [
+        // Dữ liệu mapping mẫu demo
+        { tourName: 'Tour Đà Lạt 3N2Đ', hotelName: 'Khách sạn Đà Lạt Palace' },
+        { tourName: 'Tour Phú Quốc 4N3Đ', hotelName: 'Resort Phú Quốc Luxury' },
+        { tourName: 'Tour Đà Nẵng - Bà Nà Hills 3N2Đ', hotelName: 'Bà Nà Hills Resort' }
+      ],
       form: {
         tourName: "",
         hotelName: "",
@@ -104,7 +145,6 @@ export default {
       const matched = this.tourHotels
         .filter(th => th.tourName === this.form.tourName)
         .map(th => th.hotelName);
-
       return this.hotels.filter(h => matched.includes(h.name));
     }
   },
@@ -114,55 +154,17 @@ export default {
     'form.child': 'calculateTotal'
   },
   methods: {
-    async fetchInitialData() {
-      const tourRes = await axios.get("https://localhost:7046/api/tour");
-      this.tours = tourRes.data;
-      const hotelRes = await axios.get("https://localhost:7046/api/hotel");
-      this.hotels = hotelRes.data;
-      const tourHotelRes = await axios.get("https://localhost:7046/api/tourhotel");
-      this.tourHotels = tourHotelRes.data;
-    },
     filterHotelsByTour() {
       this.form.hotelName = ""; // reset khi đổi tour
     },
-    async submitBooking() {
-      let customerID = "";
-      try {
-        const res = await axios.get(
-          `https://localhost:7046/api/customer/by-email/${encodeURIComponent(this.email.trim())}`
-        );
-        customerID = res.data.customerID || res.data.customerId;
-      } catch {
-        alert("❌ Email khách hàng không tồn tại hoặc sai.");
+    submitBooking() {
+      // Kiểm tra một số trường bắt buộc, có thể bỏ nếu muốn đặt tour mọi trường hợp
+      if (!this.email || !this.phone || !this.address || !this.form.tourName || !this.form.hotelName) {
+        alert("❌ Vui lòng nhập đầy đủ thông tin bắt buộc.");
         return;
       }
-      const selectedTour = this.tours.find(t => t.name === this.form.tourName);
-      const selectedHotel = this.hotels.find(h => h.name === this.form.hotelName);
-
-      if (!selectedTour || !selectedHotel) {
-        alert("Chưa chọn đủ tour và khách sạn.");
-        return;
-      }
-      this.calculateTotal();
-      const payload = {
-        bookingId: crypto.randomUUID(),
-        tourID: selectedTour.id || selectedTour.tourID,
-        hotelID: selectedHotel.hotelID || selectedHotel.id,
-        customerID: customerID,
-        adult: this.form.adult,
-        child: this.form.child,
-        totalPrice: this.form.totalPrice,
-        note: this.form.note // GHI CHÚ!
-      };
-
-      try {
-        await axios.post("https://localhost:7046/api/booking", payload);
-        alert("✅ Đặt tour thành công!");
-        this.resetForm();
-      } catch (err) {
-        alert("❌ Đặt tour thất bại. Vui lòng kiểm tra thông tin.");
-        console.error(err);
-      }
+      alert("✅ Đặt tour thành công!");
+      this.resetForm();
     },
     calculateTotal() {
       const selectedTour = this.tours.find(t => t.name === this.form.tourName);
@@ -177,6 +179,8 @@ export default {
     },
     resetForm() {
       this.email = "";
+      this.phone = "";
+      this.address = "";
       this.form = {
         tourName: "",
         hotelName: "",
@@ -189,7 +193,8 @@ export default {
     }
   },
   mounted() {
-    this.fetchInitialData();
+    // Không cần fetch API khi đang demo offline, nếu dùng thật thì gọi API tại đây.
+    // this.fetchInitialData();
   }
 };
 </script>

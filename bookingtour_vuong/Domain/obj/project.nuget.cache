@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SpeXJF8Vc58=",
+  "dgSpecHash": "FfifOEGDN6Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\Desktop\\DATN\\bookingtour_vuong\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\admin\\Desktop\\DATN_VUONG_CHUAN\\DATN\\bookingtour_vuong\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

@@ -1,14 +1,14 @@
 <template>
   <div class="shopee-bg min-vh-100 py-5">
     <div class="container">
-      <h2 class="shopee-title mb-5">🚩 Theo dõi lịch trình tour</h2>
+      <h2 class="shopee-title mb-5">🚩 Theo dõi lịch trình tour (Theo ID)</h2>
       <div class="row justify-content-center mb-4">
         <div class="col-md-7">
           <div class="input-group mb-2">
             <input
-              v-model="tourName"
+              v-model="tourId"
               class="form-control shopee-input"
-              placeholder="Nhập tên tour cần tra cứu..."
+              placeholder="Nhập ID tour cần tra cứu (vd: e7d4a4ea-07b5-4530-4785-08dd9b551009)"
               @keyup.enter="fetchTourStatuses"
             />
             <button class="btn shopee-btn" @click="fetchTourStatuses">
@@ -18,34 +18,22 @@
         </div>
       </div>
 
-      <!-- Shopee Tab Navigation Style -->
+      <!-- Tabs -->
       <div class="row justify-content-center mb-4">
         <div class="col-md-10 d-flex justify-content-between shopee-tab-nav">
-          <div
-            class="shopee-tab"
-            :class="{active: activeTab===0}"
-            @click="activeTab=0"
-          >
+          <div class="shopee-tab" :class="{active: activeTab===0}" @click="activeTab=0">
             <div class="shopee-tab-icon bg-primary-subtle">
               <i class="bi bi-calendar-check"></i>
             </div>
             <div class="shopee-tab-label">Trước khi diễn ra</div>
           </div>
-          <div
-            class="shopee-tab"
-            :class="{active: activeTab===1}"
-            @click="activeTab=1"
-          >
+          <div class="shopee-tab" :class="{active: activeTab===1}" @click="activeTab=1">
             <div class="shopee-tab-icon bg-warning-subtle">
               <i class="bi bi-geo-alt"></i>
             </div>
             <div class="shopee-tab-label">Lịch trình & trạng thái</div>
           </div>
-          <div
-            class="shopee-tab"
-            :class="{active: activeTab===2}"
-            @click="activeTab=2"
-          >
+          <div class="shopee-tab" :class="{active: activeTab===2}" @click="activeTab=2">
             <div class="shopee-tab-icon bg-success-subtle">
               <i class="bi bi-emoji-smile"></i>
             </div>
@@ -76,7 +64,6 @@
           <transition name="fade">
             <div v-if="activeTab === 1" class="tab-content-area">
               <h4 class="mb-3">🛣️ Lịch trình và trạng thái tour</h4>
-              <!-- Nút cập nhật và form -->
               <div class="d-flex justify-content-end mb-3">
                 <button class="btn btn-outline-warning fw-bold"
                         @click="showUpdateForm = !showUpdateForm">
@@ -130,7 +117,7 @@
                 Không tìm thấy lịch trình trạng thái cho tour này!
               </div>
               <div v-else class="alert alert-info mt-4 text-center">
-                Vui lòng nhập tên tour và tra cứu trạng thái!
+                Vui lòng nhập <b>ID tour</b> và tra cứu trạng thái!
               </div>
             </div>
           </transition>
@@ -170,10 +157,10 @@ export default {
   name: 'TourShopeeStatusView',
   data() {
     return {
-      tourName: '',
+      tourId: '',           // Chỉ dùng ID
       tourStatuses: [],
       loaded: false,
-      activeTab: 1,  // Tab 1 (lịch trình) là mặc định
+      activeTab: 1,  // Tab 1 mặc định
       showUpdateForm: false,
       form: {
         status: '',
@@ -184,13 +171,13 @@ export default {
   },
   methods: {
     async fetchTourStatuses() {
-      if (!this.tourName) {
-        alert('Vui lòng nhập TÊN TOUR!');
+      if (!this.tourId) {
+        alert('Vui lòng nhập ID TOUR!');
         return;
       }
       try {
         const res = await axios.get(
-          `https://localhost:7046/api/tourstatuslog/by-name/${encodeURIComponent(this.tourName)}`
+          `https://localhost:7046/api/tourstatuslog/${encodeURIComponent(this.tourId)}`
         );
         this.tourStatuses = res.data;
         this.loaded = true;
@@ -207,20 +194,15 @@ export default {
         : null
     },
     async submitStatusUpdate() {
-      if (!this.tourName) {
-        alert("Chưa nhập tên tour!");
+      if (!this.tourId) {
+        alert("Chưa nhập ID tour!");
         return;
       }
       if (!this.form.status) {
         alert("Nhập trạng thái mới!");
         return;
       }
-      // Lấy tourId từ lịch trình đang hiển thị
-      let tourId = this.tourStatuses[0]?.tourId;
-      if (!tourId) {
-        alert("Không xác định được TourId để cập nhật!");
-        return;
-      }
+      let tourId = this.tourId;
       try {
         await axios.post('https://localhost:7046/api/tourstatuslog', {
           tourId: tourId,
@@ -373,7 +355,7 @@ export default {
 }
 </style>
 
-<!--
+<!-- 
 Yêu cầu: Cài Bootstrap-icons nếu chưa có: 
 npm i bootstrap-icons
 hoặc chèn vào public/index.html:
